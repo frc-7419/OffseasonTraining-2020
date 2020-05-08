@@ -12,14 +12,25 @@ public class IntakeSub extends SubsystemBase {
    * Creates a new IntakeSub.
    */
 
+  private VictorSPX victor;
+
 
    /** Its a comment*/
-  public IntakeSub() {
+  public IntakeSub(VictorSPX victor) {
+
+    this.victor = victor;
 
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+
+  public void setPower(double power){
+
+    intakeVictor.set(ControlMode.PercentOutput, power);
+
   }
 }
