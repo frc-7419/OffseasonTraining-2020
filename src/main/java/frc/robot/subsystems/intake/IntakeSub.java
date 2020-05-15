@@ -20,7 +20,7 @@ public class IntakeSub extends SubsystemBase {
     this.first = first;
   }
 
-  Initers.initVictor(VictorSPX first);
+  Initers.initVictors(VictorSPX first);
 
   @Override
   public void periodic() {
