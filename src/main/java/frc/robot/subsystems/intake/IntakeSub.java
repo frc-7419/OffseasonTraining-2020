@@ -15,10 +15,12 @@ public class IntakeSub extends SubsystemBase {
   /**
    * Creates a new IntakeSub.
    */
+  
   public IntakeSub(VictorSPX first) {
     this.first = first;
   }
-  
+
+  Initers.initVictor(VictorSPX first);
 
   @Override
   public void periodic() {
