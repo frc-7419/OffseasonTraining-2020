@@ -1,5 +1,7 @@
 package frc.robot.subsystems.intake;
 
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 //intakesubtestadi
 /**
@@ -8,12 +10,15 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 public class IntakeSub extends SubsystemBase {
+  private VictorSPX first;
+  
   /**
    * Creates a new IntakeSub.
    */
-  public IntakeSub() {
-
+  public IntakeSub(VictorSPX first) {
+    this.first = first;
   }
+  
 
   @Override
   public void periodic() {
