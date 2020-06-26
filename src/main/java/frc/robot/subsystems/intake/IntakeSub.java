@@ -1,6 +1,7 @@
 package frc.robot.subsystems.intake;
 
 import javax.swing.text.ViewFactory;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -20,4 +21,9 @@ public class IntakeSub extends SubsystemBase {
     initVictors(VictorSPX victor);
   }
 
+  public void setInverted() {
+    //victor.
+  }
+
+  
 }
