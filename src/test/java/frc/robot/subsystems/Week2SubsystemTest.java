@@ -28,7 +28,7 @@ public class Week2SubsystemTest {
     verify(victor).neutralOutput();
     verify(victor).setSensorPhase(false);
     verify(victor).configNominalOutputForward(0,0);
-    verify(victor).configNominalOutputReverse(0, 0);
+    verify(victor).configNominalOutputReverse(0,0);
     verify(victor).configClosedloopRamp(.2,0);
    }
 }
