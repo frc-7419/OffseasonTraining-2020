@@ -21,6 +21,7 @@ public class IntakeSub extends SubsystemBase {
       this.victor = victor;
       Initers.initVictors(victor);
       victor.setInverted(false);
+      
   }
 
   @Override
