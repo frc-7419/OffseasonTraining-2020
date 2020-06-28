@@ -25,7 +25,7 @@ public class IntakeSub extends SubsystemBase {
   }
 
   public boolean getInverted() {
-    return 
+    return victor.getInverted(); 
 
   }
 }
