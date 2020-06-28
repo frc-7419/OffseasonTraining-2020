@@ -13,6 +13,6 @@ public class IntakeSub extends SubsystemBase{
 	// step 2: pass motor controllers through the constructor
 	public IntakeSub(VictorSPX victor){
 		this.victor = victor;
-		initVictors(VictorSPX);
+		initVictors(victor);
 	}
 }
