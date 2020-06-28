@@ -1,5 +1,8 @@
 package frc.robot.subsystems.intake;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 //intakesubtestadi
 /**
@@ -30,7 +33,7 @@ public class IntakeSub extends SubsystemBase {
 
   public void setPower(double power){
 
-    intakeVictor.set(ControlMode.PercentOutput, power);
+    // intakeVictor.set(ControlMode.PercentOutput, power);
 
   }
 }
