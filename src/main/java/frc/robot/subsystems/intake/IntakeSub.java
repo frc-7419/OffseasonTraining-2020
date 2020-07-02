@@ -30,7 +30,7 @@ public class IntakeSub extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  /*public void setPower(double power){
-		intakeVictor.set(ControlMode.PercentOutput, power);
-	}*/
+  public void setPower(double power){
+		victor.set(ControlMode.PercentOutput, power);
+	}
 }
