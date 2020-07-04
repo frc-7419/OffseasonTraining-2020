@@ -8,7 +8,7 @@ public class RunIntake extends CommandBase {
    */
   private IntakeSub intake;
 
-  public RunIntake(IntakeSub intake) {
+  public RunIntake(IntakeSub intake, double power) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.intake = intake;
   }
@@ -21,7 +21,7 @@ public class RunIntake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intake.setPower(10);
+    intake.setPower(0.5);
   }
 
   // Called once the command ends or is interrupted.
