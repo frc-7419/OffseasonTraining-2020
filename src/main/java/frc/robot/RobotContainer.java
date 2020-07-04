@@ -1,5 +1,8 @@
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
+import frc.robot.Constants.CanIds;
 import frc.robot.subsystems.intake.*;
 
 /**
@@ -11,7 +14,8 @@ import frc.robot.subsystems.intake.*;
 public class RobotContainer {
 
   // The robot's subsystems are defined here
-  private final IntakeSub intake = new IntakeSub(null);
+  private VictorSPX intakeVictor = new VictorSPX(CanIds.intakeVictor.id);
+  private final IntakeSub intake = new IntakeSub(intakeVictor);
 
   // The commands that run on those subsystems are defined here
   private final RunIntake runIntake = new RunIntake();
