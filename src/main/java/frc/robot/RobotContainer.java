@@ -13,12 +13,13 @@ import frc.robot.subsystems.intake.*;
  */
 public class RobotContainer {
 
-  // The robot's subsystems are defined here
   private VictorSPX intakeVictor = new VictorSPX(CanIds.intakeVictor.id);
+
+  // The robot's subsystems are defined here
   private final IntakeSub intake = new IntakeSub(intakeVictor);
 
   // The commands that run on those subsystems are defined here
-  private final RunIntake runIntake = new RunIntake();
+  private final RunIntake runIntake = new RunIntake(intake, .5);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
