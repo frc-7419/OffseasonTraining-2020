@@ -11,7 +11,7 @@ import frc.robot.subsystems.intake.*;
 public class RobotContainer {
 
   // The robot's subsystems are defined here
-  private final IntakeSub intake = new IntakeSub();
+  private final IntakeSub intake = new IntakeSub(null);
 
   // The commands that run on those subsystems are defined here
   private final RunIntake runIntake = new RunIntake();
