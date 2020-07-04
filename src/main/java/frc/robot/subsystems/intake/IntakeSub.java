@@ -1,8 +1,7 @@
 package frc.robot.subsystems.intake;
 
-import javax.swing.text.ViewFactory;
-
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -13,14 +12,18 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
  //comment 
  
- public class IntakeSub extends SubsystemBase {
+public class IntakeSub extends SubsystemBase {
+  private VictorSPX victor;
   /**
    * Creates a new IntakeSub.
    */
-  public IntakeSub() {
-	// step 2: pass motor controllers through the constructor
-	public IntakeSub(VictorSPX victor){
+  public IntakeSub(VictorSPX victor){
 		this.victor = victor;
 		initVictors(victor);
 	}
+
+  @Override
+  public void periodic() {
+    // This method will be called once per scheduler run
+  }
 }
