@@ -11,12 +11,12 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
  */
 public class RobotContainer {
 
-  private final VictorSPX victor = new VictorSPX(Constants.CanIds.intakeVictor.id);
+  private final VictorSPX intakeVictor = new VictorSPX(Constants.CanIds.intakeVictor.id);
   // The robot's subsystems are defined here
-  private final IntakeSub intake = new IntakeSub(victor);
+  private final IntakeSub intake = new IntakeSub(intakeVictor);
 
   // The commands that run on those subsystems are defined here
-  private final RunIntake runIntake = new RunIntake();
+  
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
