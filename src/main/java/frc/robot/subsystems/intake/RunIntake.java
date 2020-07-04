@@ -6,21 +6,11 @@ public class RunIntake extends CommandBase {
   /**
    * Creates a new RunIntake.
    */
-  private IntakeSub intake;
-
-  public RunIntake(IntakeSub intake) {
+  public RunIntake() {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.intake = intake;
   }
 
-  //public RunIntakeForward() {
-
-  //}
-
-public RunIntake() {
-}
-
-// Called when the command is initially scheduled.
+  // Called when the command is initially scheduled.
   @Override
   public void initialize() {
   }
@@ -28,7 +18,6 @@ public RunIntake() {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intake.setPower(.5);
   }
 
   // Called once the command ends or is interrupted.
