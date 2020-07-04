@@ -11,7 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
  */
 public class RobotContainer {
 
-  private final VictorSPX intakeVictor = new VictorSPX(Constants.CanIds.intakeVictor.id);
+  private VictorSPX intakeVictor = new VictorSPX(CanIds.intakeVictor.id);
   // The robot's subsystems are defined here
   private final IntakeSub intake = new IntakeSub(intakeVictor);
 
