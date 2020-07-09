@@ -1,7 +1,5 @@
 package frc.robot;
 
-
-import com.team7419.PaddedXbox;
 import frc.robot.subsystems.intake.IntakeSub;
 
 /**
@@ -14,7 +12,7 @@ public class RobotContainer {
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
-  
+
   public RobotContainer() {
 
     // Configure the button bindings
