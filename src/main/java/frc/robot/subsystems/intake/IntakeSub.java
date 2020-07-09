@@ -25,6 +25,3 @@ public class IntakeSub extends SubsystemBase {
     victor.set(ControlMode.PercentOutput, power);
   }
 }
-
-// ERROR
-// ENOENT: no such file or directory, stat '/Users/aaravwattal/FRCOffseasonTraining/src/main/java/frc/robot/subsystems/intake/gradlew'
