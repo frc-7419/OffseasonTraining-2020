@@ -1,5 +1,8 @@
 package frc.robot.subsystems.intake;
 
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -8,13 +11,35 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 
- //comment 
- 
+//comment 
+
+
 public class IntakeSub extends SubsystemBase {
   /**
    * Creates a new IntakeSub.
    */
-  public IntakeSub() {
+
+  private VictorSPX victor;
+
+  public IntakeSub(VictorSPX victor) {
+
+    this.victor = victor;
+    
+
+  }
+
+  public boolean getInverted() {
+
+    if(victor.getInverted()) {
+
+      return true;
+
+    }
+    else {
+
+      return false;
+
+    }
 
   }
 
