@@ -29,7 +29,7 @@ public class IntakeSub extends SubsystemBase {
   }
 
   public boolean getInverted() {
-    return victor.getInverted(); 
+    return victor.getInverted();
   }
 
   public void setPower(double power){
