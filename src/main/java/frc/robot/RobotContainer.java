@@ -17,17 +17,21 @@ public class RobotContainer {
   private VictorSPX intakeVictor = new VictorSPX(CanIds.intakeVictor.id);
 
   // The robot's subsystems are defined here
-  private final IntakeSub intake = new IntakeSub(intakeVictor);
+  // private final IntakeSub intake = new IntakeSub(intakeVictor);
+
+  private Factory factory;
+  private IntakeSub intakeSub;
+  private PaddedXbox controller;
 
   // The commands that run on those subsystems are defined here
-  private final RunIntake runIntake = new RunIntake(intake);
+  // private final RunIntake runIntake = new RunIntake(intake);
 
-  private final PaddedXbox controller = new PaddedXbox();
+  // private final PaddedXbox controller = new PaddedXbox();
   
-  public RobotContainer() {
+  public RobotContainer(Factory factory) {
     this.factory = factory;
     // Configure the button bindings
-    runIntake = factory.getIntakeSub();
+    intakeSub = factory.getIntakeSub();
     controller = factory.getPaddedXbox();
     configureButtonBindings();
   }

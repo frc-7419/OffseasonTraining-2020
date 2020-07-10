@@ -7,10 +7,12 @@ public class RunIntake extends CommandBase {
    * Creates a new RunIntake.
    */
   private IntakeSub intake;
+  private Double power;
 
-  public RunIntake(IntakeSub intake) {
+  public RunIntake(IntakeSub intake, Double power) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.intake = intake;
+    this.power = power;
   }
 
   // Called when the command is initially scheduled.
