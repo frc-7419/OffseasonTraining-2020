@@ -1,8 +1,6 @@
 package frc.robot;
 
-
-
-
+import com.team7419.PaddedXbox;
 
 import frc.robot.subsystems.intake.*;
 
@@ -21,7 +19,9 @@ public class RobotContainer {
 
   // The commands that run on those subsystems are defined here
   private final RunIntake runIntake = new RunIntake();
-
+  //private Factory factory;
+  private IntakeSub intakeSub;
+  private PaddedXbox controller;
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
