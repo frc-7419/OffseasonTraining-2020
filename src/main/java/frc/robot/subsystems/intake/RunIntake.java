@@ -7,15 +7,23 @@ public class RunIntake extends CommandBase {
    * Creates a new RunIntake.
    */
   private IntakeSub intake;
+  private double power;
 
   public RunIntake(IntakeSub intake, double power) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.intake = intake;
+    this.power = power;
+
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+  }
+
+  public double getPower() {
+    this.power = 0.5;
+    return power;
   }
 
   // Called every time the scheduler runs while the command is scheduled.
