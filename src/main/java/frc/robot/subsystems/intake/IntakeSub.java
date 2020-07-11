@@ -68,6 +68,9 @@ public class IntakeSub extends SubsystemBase {
     //return victor.getInverted();
   }
 
+public void setPower(double d) {
+}
+
   
   // public void setPower(double power){
 	// 	Object intakeVictor;
