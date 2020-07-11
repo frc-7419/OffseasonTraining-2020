@@ -1,12 +1,21 @@
 package frc.robot;
 
+import com.team7419.PaddedXbox;
+
+//import org.graalvm.compiler.replacements.SnippetCounter.Group.Factory;
+
+//import java.lang.invoke.ClassSpecializer.Factory;
+
 import frc.robot.subsystems.intake.*;
+//mport jdk.nashorn.internal.runtime.regexp.JoniRegExp.Factory;
+//import sun.security.smartcardio.SunPCSC.Factory;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
  * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
  * (including subsystems, commands, and button mappings) should be declared here.
+ 
  */
 public class RobotContainer {
 
@@ -19,8 +28,15 @@ public class RobotContainer {
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
+  private Factory factory;
+  private IntakeSub intakeSub;
+  private PaddedXbox controller;
+
+  //private Object factory;
+
   public RobotContainer() {
     // Configure the button bindings
+    //this.factory = factory;
     configureButtonBindings();
   }
 
