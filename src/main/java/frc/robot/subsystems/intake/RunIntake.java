@@ -4,10 +4,12 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class RunIntake extends CommandBase {
 
-  private IntakeSub intake;  
+  private IntakeSub intake;
+  private double power;  
 
   public RunIntake(IntakeSub intake, double power) {
     this.intake = intake;
+    this.power =  power;
   }
 
   @Override
@@ -16,7 +18,7 @@ public class RunIntake extends CommandBase {
 
   @Override
   public void execute() {
-    intake.setPower(0.5);
+    intake.setPower(power);
   }
 
   @Override
@@ -29,7 +31,7 @@ public class RunIntake extends CommandBase {
     return false;
   }
 
-  public void getPower() {
-    //return power;
+  public double getPower() {
+    return power;
   }
 }
