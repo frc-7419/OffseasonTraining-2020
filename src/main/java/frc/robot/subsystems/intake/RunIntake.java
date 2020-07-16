@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class RunIntake extends CommandBase {
 
-  private IntakeSub intake;
+  private IntakeSub intake;  
 
   public RunIntake(IntakeSub intake, double power) {
     this.intake = intake;

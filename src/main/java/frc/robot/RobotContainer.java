@@ -5,6 +5,10 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import frc.robot.Constants.CanIds;
 import frc.robot.subsystems.intake.*;
 
+import com.team7419.PaddedXbox;
+import frc.robot.subsystems.intake.IntakeSub;
+import frc.robot.Factory;
+
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -12,6 +16,10 @@ import frc.robot.subsystems.intake.*;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+
+  // private IntakeSub intake;  
+  private  Factory factory;
+  private PaddedXbox paddedXbox;
 
   private VictorSPX intakeVictor = new VictorSPX(CanIds.intakeVictor.id);
 
