@@ -20,6 +20,7 @@ private PaddedXbox paddedXbox;
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer(Factory factory)  {
+    this.factory = factory;
     intakeSub = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     // Configure the button bindings
