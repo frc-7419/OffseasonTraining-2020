@@ -31,6 +31,6 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
-    paddedXbox.getA().whenPressed(factory.getRunIntake(0.5));
+    paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
 }
