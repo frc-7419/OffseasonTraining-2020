@@ -7,7 +7,10 @@
 
 package frc.robot;
 
+import com.team7419.PaddedXbox;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.intake.IntakeSub;
 
 public class RunIntakeWithJoystick extends CommandBase {
   /**
@@ -17,7 +20,10 @@ public class RunIntakeWithJoystick extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
-  // Called when the command is initially scheduled.
+  public RunIntakeWithJoystick(IntakeSub intakeSub, PaddedXbox joystick) {
+}
+
+// Called when the command is initially scheduled.
   @Override
   public void initialize() {
   }

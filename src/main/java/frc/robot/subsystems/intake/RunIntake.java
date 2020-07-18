@@ -20,6 +20,9 @@ public class RunIntake extends CommandBase {
   public RunIntake() {
   }
 
+public RunIntake(IntakeSub intakeMock, double d) {
+}
+
 // Called when the command is initially scheduled.
   @Override
   public void initialize() {
@@ -41,4 +44,8 @@ public class RunIntake extends CommandBase {
   public boolean isFinished() {
     return false;
   }
+
+public double getPower() {
+	return 0;
+}
 }
