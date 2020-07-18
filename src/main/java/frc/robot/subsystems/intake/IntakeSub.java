@@ -26,6 +26,7 @@ public class IntakeSub extends SubsystemBase {
   public IntakeSub(VictorSPX victor) {
     this.victor = victor;
     Initers.initVictors(victor);
+    victor.setInverted(false);
     //int init = Initers.initVictors(VictorSPX victor);
   }
 
@@ -48,9 +49,9 @@ public class IntakeSub extends SubsystemBase {
 
   //}
 
-  public IntakeSub() {
+  //public IntakeSub() {
 
-  }
+  //}
 
   @Override
   public void periodic() {
@@ -64,13 +65,18 @@ public class IntakeSub extends SubsystemBase {
   // }
 
   public boolean getInverted() {
-    return false;
-    //return victor.getInverted();
+    //return false;
+    return victor.getInverted();
   }
 
-public void setPower(double d) {
-}
+  //public void setPower(double d) {
 
+
+  //}
+  public void setPower(double d) {
+    //intakeVictor.set(ControlMode.PercentOutput, power);
+
+  }
   
   // public void setPower(double power){
 	// 	Object intakeVictor;
