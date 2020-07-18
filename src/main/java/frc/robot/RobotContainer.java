@@ -1,5 +1,9 @@
 package frc.robot;
 
+import com.team7419.PaddedXbox;
+
+import frc.robot.subsystems.intake.IntakeSub;
+
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -11,7 +15,16 @@ public class RobotContainer {
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
-  public RobotContainer() {
+
+  public Factory simFactory;
+  public IntakeSub intake;
+  public PaddedXbox xbox;
+     
+  public RobotContainer(Factory factory) {
+    this.simFactory = factory;
+    intake = this.simFactory.getIntakeSub();
+    xbox = this.simFactory.getPaddedXbox();
+
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -21,5 +34,6 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
+    xbox.getA().whenPressed(simFactory.getRunIntake(0.5));
   }
 }
