@@ -17,8 +17,8 @@ public class RunIntake extends CommandBase {
 
   //}
 
-public RunIntake() {
-}
+  public RunIntake() {
+  }
 
 // Called when the command is initially scheduled.
   @Override
