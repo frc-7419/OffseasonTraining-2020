@@ -13,7 +13,7 @@ import frc.robot.subsystems.intake.IntakeSub;
  */
 public class RobotContainer {
   private Factory factory;
-  private IntakeSub intakeSub;
+  private IntakeSub intake;
   private PaddedXbox paddedXbox;
 
   /**
@@ -22,7 +22,7 @@ public class RobotContainer {
 
   public RobotContainer(Factory factory) {
     this.factory = factory;
-    intakeSub = factory.getIntakeSub();
+    intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     
     // Configure the button bindings
@@ -34,6 +34,9 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
-    paddedXbox.getA().whenPressed(factory.getRunIntake(0.5));
+    paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
+  }
+
+  public void setDefaultCommands() {
   }
 }

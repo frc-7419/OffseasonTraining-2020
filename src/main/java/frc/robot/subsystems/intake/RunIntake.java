@@ -22,14 +22,13 @@ public class RunIntake extends CommandBase {
   }
 
   public double getPower() {
-    this.power = 0.5;
     return power;
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intake.setPower(0.5);
+    intake.setPower(power);
   }
 
   // Called once the command ends or is interrupted.
