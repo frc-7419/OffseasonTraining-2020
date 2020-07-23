@@ -37,4 +37,5 @@ public class Week3IntakeCommandTest{
         runIntake.execute();
         verify(victor).set(ControlMode.PercentOutput, .5);
     }
+    
 }
