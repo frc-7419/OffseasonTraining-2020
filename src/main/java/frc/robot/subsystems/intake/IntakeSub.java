@@ -38,5 +38,4 @@ public class IntakeSub extends SubsystemBase {
   public VictorSPX getVictor() {
     return this.victor;
   }
-
 }

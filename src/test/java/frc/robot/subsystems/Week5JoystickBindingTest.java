@@ -34,7 +34,7 @@ public class Week5JoystickBindingTest {
         IntakeSub intake = simFactory.getIntakeSub();
         robotContainer.setDefaultCommands();
         assertNotEquals(null, intake.getDefaultCommand());
-    }
+    }   
 
     /**
      * Checks that intake's default command is RunIntake (and takes a param joystick)

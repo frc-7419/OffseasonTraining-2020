@@ -38,5 +38,6 @@ public class RobotContainer {
   }
 
   public void setDefaultCommands() {
+    intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
   }
 }
