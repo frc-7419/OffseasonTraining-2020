@@ -7,14 +7,22 @@
 
 package frc.robot.subsystems.intake;
 
+import com.team7419.PaddedXbox;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.intake.IntakeSub;
 
 public class RunIntakeWithJoystick extends CommandBase {
+
+  private IntakeSub intake;
+  private PaddedXbox paddedXbox;
   /**
    * Creates a new RunIntakeWithJoystick.
    */
-  public RunIntakeWithJoystick() {
-    // Use addRequirements() here to declare subsystem dependencies.
+  public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox paddedXbox) {
+    addRequirements(intake);
+    this.intake = intake;
+    this.paddedXbox = paddedXbox;
   }
 
   // Called when the command is initially scheduled.
@@ -25,11 +33,13 @@ public class RunIntakeWithJoystick extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    intake.setPower(paddedXbox.getLeftY());
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    intake.setPower(0);
   }
 
   // Returns true when the command should end.
