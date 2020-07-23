@@ -10,7 +10,7 @@ import frc.robot.Factory;
 import frc.robot.Constants.CanIds;
 import frc.robot.subsystems.intake.IntakeSub;
 import frc.robot.subsystems.intake.RunIntake;
-import frc.robot.RunIntakeWithJoystick;
+import frc.robot.subsystems.intake.RunIntakeWithJoystick;
 
 public class SimFactory implements Factory{
     IntakeSub intakeSub;

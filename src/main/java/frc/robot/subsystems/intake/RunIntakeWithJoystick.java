@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.robot.subsystems.intake;
 
 import com.team7419.PaddedXbox;
 

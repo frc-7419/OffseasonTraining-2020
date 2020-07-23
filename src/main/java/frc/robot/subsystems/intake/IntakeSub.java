@@ -1,5 +1,6 @@
 package frc.robot.subsystems.intake;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.team7419.Initers;
 
@@ -27,59 +28,31 @@ public class IntakeSub extends SubsystemBase {
     this.victor = victor;
     Initers.initVictors(victor);
     victor.setInverted(false);
-    //int init = Initers.initVictors(VictorSPX victor);
+    
   }
 
   public VictorSPX getVictor(){
     return victor;
     
   }
-  // public IntakeSub(VictorSPX victor) {
-  //   this.victor = victor;
-  // }
-  // public IntakeSub(){
-
-  // }
-
-  // public IntakeSub(VictorSPX victor) {
-  //   this.victor = victor;
-  // }
-
-  //public IntakeSub() {
-
-  //}
-
-  //public IntakeSub() {
-
-  //}
+  
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+    
   }
-  //power function: I am still working on this
-  // public void setPower(double power){
-	// 	//Object intakeVictor;
-  //   //Object ControlMode;
-  //   intakeVictor.set(ControlMode.PercentOutput, power);
-  // }
+
 
   public boolean getInverted() {
-    //return false;
+    
     return victor.getInverted();
   }
 
-  //public void setPower(double d) {
 
-
-  //}
-  public void setPower(double d) {
-    //intakeVictor.set(ControlMode.PercentOutput, power);
+  
+  public void setPower(double power) {
+    victor.set(ControlMode.PercentOutput, power);
 
   }
   
-  // public void setPower(double power){
-	// 	Object intakeVictor;
-  //   intakeVictor.set(ControlMode.PercentOutput, power);
-	// }
 }

@@ -34,6 +34,6 @@ public class RobotContainer {
     paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
 
-public void setDefaultCommands() {
-}
+  public void setDefaultCommands() {
+  }
 }
