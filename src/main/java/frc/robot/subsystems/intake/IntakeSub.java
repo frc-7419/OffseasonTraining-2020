@@ -11,6 +11,8 @@ public class IntakeSub extends SubsystemBase {
 
   private VictorSPX victor;
 
+  
+
   public IntakeSub(VictorSPX victor) {
     this.victor = victor; 
     Initers.initVictors(victor);
