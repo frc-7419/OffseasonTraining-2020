@@ -16,6 +16,7 @@ public class RunIntakeWithJoystick extends CommandBase {
 
   private IntakeSub intake;
   private PaddedXbox paddedXbox;
+  private Factory factory;
   /**
    * Creates a new RunIntakeWithJoystick.
    */
@@ -23,6 +24,7 @@ public class RunIntakeWithJoystick extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     this.intake = intake;
     this.paddedXbox = paddedXbox;
+    paddedXbox.getTrigger(factory.getRunIntakeWithPower(0.5));
   }
 
   // Called when the command is initially scheduled.
