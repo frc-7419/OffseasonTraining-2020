@@ -49,7 +49,7 @@ public class Week6TankDriveTest {
         robotContainer.setDefaultCommands();
         assertNotEquals(null, driveBaseSub.getDefaultCommand());
     }
-
+    
     /**
      * Checks that the drive base's default command is TankDrive
      */

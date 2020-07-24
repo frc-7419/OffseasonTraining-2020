@@ -2,6 +2,10 @@ package frc.robot;
 
 import frc.robot.Factory;
 import com.team7419.PaddedXbox;
+
+import edu.wpi.first.wpilibj.Talon;
+import frc.robot.subsystems.drivebase.DriveBaseSub;
+import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.intake.IntakeSub;
 
 
@@ -15,7 +19,8 @@ public class RobotContainer {
   private Factory factory;
   private IntakeSub intake;
   private PaddedXbox paddedXbox;
-
+  private DriveBaseSub driveBaseSub;
+  private TankDrive tankDrive;
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
