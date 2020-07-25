@@ -4,7 +4,6 @@ import com.team7419.PaddedXbox;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Factory;
 
 
 public class TankDrive extends CommandBase {
@@ -14,7 +13,6 @@ public class TankDrive extends CommandBase {
 
   public TankDrive(DriveBaseSub driveBaseSub, PaddedXbox paddedXbox) {
     addRequirements(driveBaseSub);
-
     this.driveBaseSub = driveBaseSub;
     this.paddedXbox = paddedXbox;
   }

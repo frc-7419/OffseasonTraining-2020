@@ -19,8 +19,8 @@ public class RobotContainer {
   private Factory factory;
   private IntakeSub intake;
   private PaddedXbox paddedXbox;
-  private DriveBaseSub driveBaseSub;
   private TankDrive tankDrive;
+  private DriveBaseSub driveBaseSub;
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -29,6 +29,7 @@ public class RobotContainer {
     this.factory = factory;
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
+    driveBaseSub = factory.getDriveBaseSub();
     
     // Configure the button bindings
     configureButtonBindings();
@@ -44,5 +45,6 @@ public class RobotContainer {
 
   public void setDefaultCommands() {
     intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
+    driveBaseSub.setDefaultCommand(factory.getTankDrive(paddedXbox));
   }
 }
