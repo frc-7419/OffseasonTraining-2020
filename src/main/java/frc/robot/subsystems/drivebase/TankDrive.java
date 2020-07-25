@@ -1,5 +1,7 @@
 package frc.robot.subsystems.drivebase;
 
+import com.team7419.PaddedXbox;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class TankDrive extends CommandBase {
@@ -8,7 +10,13 @@ public class TankDrive extends CommandBase {
   /**
    * Creates a new TankDrive.
    */
-  public TankDrive() {
+
+  public DriveBaseSub driveBase;
+  public PaddedXbox paddedXbox;
+
+  public TankDrive(DriveBaseSub driveBase, PaddedXbox paddedXbox) {
+    this.driveBase = driveBase;
+    this.paddedXbox = paddedXbox;
   }
 
   @Override

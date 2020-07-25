@@ -16,7 +16,7 @@ import org.mockito.ArgumentCaptor;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.intake.IntakeSub;
-import frc.robot.subsystems.intake.RunIntakeWithJoystick;
+import frc.robot.RunIntakeWithJoystick;
 
 public class Week5JoystickBindingTest {
 
@@ -26,6 +26,7 @@ public class Week5JoystickBindingTest {
     /**
      * Checks if RobotContainer's setDefaultCommands method sets a default command to IntakeSub
      */
+
     @Test
     public void defaultCommandTest() {
         JoystickButton mockButton = mock(JoystickButton.class);       
@@ -40,6 +41,7 @@ public class Week5JoystickBindingTest {
      * Checks that intake's default command is RunIntake (and takes a param joystick)
      */
     @Test
+    
     public void runIntakeWithJoystick(){
         JoystickButton mockButton = mock(JoystickButton.class);       
         when(joystick.getA()).thenReturn(mockButton);

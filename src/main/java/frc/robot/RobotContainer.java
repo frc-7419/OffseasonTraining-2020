@@ -34,6 +34,10 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
-    xbox.getA().whenPressed(simFactory.getRunIntake(0.5));
+    xbox.getA().whenPressed(simFactory.getRunIntakeWithJoystick(xbox));
+  }
+
+  public void setDefaultCommands() {
+    intake.setDefaultCommand(simFactory.getRunIntakeWithJoystick(simFactory.getPaddedXbox()));
   }
 }
