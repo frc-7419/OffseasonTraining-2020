@@ -29,6 +29,7 @@ public class RunIntakeWithJoystick extends CommandBase {
   public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox paddedXbox) {
     this.intake = intake;
     this.paddedXbox = paddedXbox;
+    addRequirements(intake);
     
   }
   

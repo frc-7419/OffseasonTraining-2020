@@ -21,6 +21,7 @@ public class RobotContainer {
     this.factory = factory;
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
+    
 
     // Configure the button bindings
     configureButtonBindings();
