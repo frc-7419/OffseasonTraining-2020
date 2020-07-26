@@ -34,7 +34,12 @@ public class IntakeSub extends SubsystemBase {
   public VictorSPX getVictor(){
     return victor;
     
+    
   }
+
+  //public VictorSPX getVictor(){
+    //return VictorSPX;
+  //}
   
 
   @Override
@@ -54,5 +59,7 @@ public class IntakeSub extends SubsystemBase {
     victor.set(ControlMode.PercentOutput, power);
 
   }
+
+  
   
 }
