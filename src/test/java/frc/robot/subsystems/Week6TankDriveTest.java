@@ -70,7 +70,7 @@ public class Week6TankDriveTest {
     public void driveBaseLeftIsControlledWithLeftJoystickTest() {
         DriveBaseSub driveBaseSub = simFactory.getDriveBaseSub();
         TankDrive tankDrive = new TankDrive(driveBaseSub, joystick);
-        TalonFX leftFront = driveBaseSub.getLeftMast();
+        TalonFX leftFront = driveBaseSub.getLeftMass();
         TalonFX leftBack = driveBaseSub.getLeftFollow();
         when(joystick.getLeftY()).thenReturn(.75);
         tankDrive.execute();
@@ -78,18 +78,20 @@ public class Week6TankDriveTest {
         try {
             verify(leftBack, atLeast(0)).follow(leftFront);
         } catch (AssertionError e) {
-            verify(leftBack, atLeast(0)).set(ControlMode.PercentOutput, .75);;
+            verify(leftBack, atLeast(0)).set(ControlMode.PercentOutput, .75);
+            ;
         }
     }
 
     /**
-     * Checks that moving the right joystick up will correlate to the right side speed
+     * Checks that moving the right joystick up will correlate to the right side
+     * speed
      */
     @Test
-    public void driveBaseRightIsControlledWithRightJoystickTest(){   
+    public void driveBaseRightIsControlledWithRightJoystickTest() {
         DriveBaseSub driveBaseSub = simFactory.getDriveBaseSub();
         TankDrive tankDrive = new TankDrive(driveBaseSub, joystick);
-        TalonFX rightFront = driveBaseSub.getRightMast();
+        TalonFX rightFront = driveBaseSub.getRightMass();
         TalonFX rightBack = driveBaseSub.getRightFollow();
         when(joystick.getRightY()).thenReturn(.75);
         tankDrive.execute();
@@ -97,7 +99,8 @@ public class Week6TankDriveTest {
         try {
             verify(rightBack, atLeast(0)).follow(rightFront);
         } catch (AssertionError e) {
-            verify(rightBack, atLeast(0)).set(ControlMode.PercentOutput, .75);;
+            verify(rightBack, atLeast(0)).set(ControlMode.PercentOutput, .75);
+            ;
         }
     }
 
@@ -105,10 +108,10 @@ public class Week6TankDriveTest {
      * Checks that when the command *ENDS* hint hint, all 4 drive motors stop.
      */
     @Test
-    public void turnsOffWhenCommandEndsTest(){
+    public void turnsOffWhenCommandEndsTest() {
         DriveBaseSub driveBaseSub = simFactory.getDriveBaseSub();
-        TalonFX leftFront = driveBaseSub.getLeftMast();
-        TalonFX rightFront = driveBaseSub.getRightMast();
+        TalonFX leftFront = driveBaseSub.getLeftMass();
+        TalonFX rightFront = driveBaseSub.getRightMass();
         TankDrive tankDrive = new TankDrive(driveBaseSub, joystick);
         tankDrive.end(false);
         verify(leftFront).set(ControlMode.PercentOutput, 0);

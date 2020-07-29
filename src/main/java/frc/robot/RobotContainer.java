@@ -1,7 +1,13 @@
 package frc.robot;
+
 import frc.robot.Factory;
 import com.team7419.PaddedXbox;
+
+import frc.robot.subsystems.drivebase.DriveBaseSub;
+import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.intake.IntakeSub;
+//import frc.robot.subsystems.drivebase.DriveBaseSub;
+//import frc.robot.subsystems.drivebase.TankDrive;
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -12,6 +18,8 @@ public class RobotContainer {
   private Factory factory;
   private IntakeSub intake;
   private PaddedXbox paddedXbox;
+  private DriveBaseSub driveBaseSub;
+  private TankDrive tankDrive;
 
 
   /**
@@ -21,6 +29,8 @@ public class RobotContainer {
     this.factory = factory;
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
+    driveBaseSub = factory.getDriveBaseSub();
+
     
 
     // Configure the button bindings
@@ -37,5 +47,6 @@ public class RobotContainer {
 
   public void setDefaultCommands() {
     intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
+    driveBaseSub.setDefaultCommand(factory.getTankDrive(paddedXbox));
   }
 }
