@@ -31,6 +31,7 @@ private DriveBaseSub driveBaseSub;
     paddedXbox = factory.getPaddedXbox();
     // Configure the button bindings
     configureButtonBindings();
+    driveBaseSub = factory.getDriveBaseSub();
   }
 
   /**
