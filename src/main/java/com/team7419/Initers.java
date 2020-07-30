@@ -5,7 +5,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 public abstract class Initers {
 
-    public static void initVictors(VictorSPX...victors){
+    public static void initVictors(VictorSPX... victors) {
         for (VictorSPX victor : victors) {
 			victor.neutralOutput();
 		    victor.setSensorPhase(false);

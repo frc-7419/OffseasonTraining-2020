@@ -28,9 +28,9 @@ public class Week6And7DriveTrainTest {
     SimFactory simFactory = new SimFactory();
     PaddedXbox joystick = simFactory.getPaddedXbox();
     DriveBaseSub driveBaseSub = simFactory.getDriveBaseSub();
-    TalonFX leftFront = driveBaseSub.getLeftMast();
+    TalonFX leftFront = driveBaseSub.getLeftMass();
     TalonFX leftBack = driveBaseSub.getLeftFollow();
-    TalonFX rightFront = driveBaseSub.getRightMast();
+    TalonFX rightFront = driveBaseSub.getRightMass();
     TalonFX rightBack = driveBaseSub.getRightFollow();
     JoystickButton mockButton = mock(JoystickButton.class);
     TankDrive tankDrive = simFactory.getTankDrive(joystick);

@@ -1,38 +1,39 @@
 package frc.robot;
 
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import frc.robot.Factory;
 import com.team7419.PaddedXbox;
 
-import frc.robot.Constants.CanIds;
-import frc.robot.subsystems.intake.*;
-
+import frc.robot.subsystems.drivebase.DriveBaseSub;
+import frc.robot.subsystems.drivebase.TankDrive;
+import frc.robot.subsystems.intake.IntakeSub;
+//import frc.robot.subsystems.drivebase.DriveBaseSub;
+//import frc.robot.subsystems.drivebase.TankDrive;
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
  * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
- * (including subsystems, commands, and button mappings) should be declared here.
+ * (including subsystems, commands, and button mappings) should be declared here. 
  */
 public class RobotContainer {
-
-  private VictorSPX intakeVictor = new VictorSPX(CanIds.intakeVictor.id);
-
-  // The robot's subsystems are defined here
-  // private final IntakeSub intake = new IntakeSub(intakeVictor);
-
   private Factory factory;
-  private IntakeSub intakeSub;
-  private PaddedXbox controller;
+  private IntakeSub intake;
+  private PaddedXbox paddedXbox;
+  private DriveBaseSub driveBaseSub;
+  private TankDrive tankDrive;
 
-  // The commands that run on those subsystems are defined here
-  // private final RunIntake runIntake = new RunIntake(intake);
 
-  // private final PaddedXbox controller = new PaddedXbox();
-  
+  /**
+   * The container for the robot.  Contains subsystems, OI devices, and commands.
+   */
   public RobotContainer(Factory factory) {
     this.factory = factory;
+    intake = factory.getIntakeSub();
+    paddedXbox = factory.getPaddedXbox();
+    driveBaseSub = factory.getDriveBaseSub();
+
+    
+
     // Configure the button bindings
-    intakeSub = factory.getIntakeSub();
-    controller = factory.getPaddedXbox();
     configureButtonBindings();
   }
 
@@ -41,9 +42,11 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
+    paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
+  }
 
-    controller.getA().whenPressed(factory.getRunIntake(0.5));
-
-
+  public void setDefaultCommands() {
+    intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
+    driveBaseSub.setDefaultCommand(factory.getTankDrive(paddedXbox));
   }
 }
