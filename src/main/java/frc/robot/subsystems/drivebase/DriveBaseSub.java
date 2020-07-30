@@ -1,9 +1,7 @@
 package frc.robot.subsystems.drivebase;
 
-import frc.robot.Factory;
-import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveBaseSub extends SubsystemBase {
