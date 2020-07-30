@@ -42,8 +42,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
 
-    controller.getA();
-    factory.getRunIntake(0.5);
+    controller.getA().whenPressed(factory.getRunIntake(0.5));
+
 
   }
 }
