@@ -31,7 +31,6 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
-    joystick.getA();
-    factory.getRunIntake(0.5);
+    joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
 }
