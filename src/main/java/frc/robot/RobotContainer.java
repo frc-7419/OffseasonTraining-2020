@@ -10,28 +10,29 @@ import frc.robot.subsystems.intake.IntakeSub;
 
 
 public class RobotContainer {
-private Factory factory;
-private IntakeSub intake;
-private PaddedXbox paddedXbox;
-private TankDrive tankDrive;
-private DriveBaseSub driveBaseSub;
+  private Factory factory;
+  private IntakeSub intake;
+  private PaddedXbox paddedXbox;
+  private TankDrive tankDrive;
+  private DriveBaseSub driveBaseSub;
 
-public RobotContainer(Factory factory) {
-  this.factory = factory;
-  intake = factory.getIntakeSub();
-  paddedXbox = factory.getPaddedXbox();
-  driveBaseSub = factory.getDriveBaseSub();
+  public RobotContainer(Factory factory) {
+    this.factory = factory;
+    intake = factory.getIntakeSub();
+    paddedXbox = factory.getPaddedXbox();
+    driveBaseSub = factory.getDriveBaseSub();
 
-  // Configure the button bindings
-  configureButtonBindings();
-}
+    // Configure the button bindings
+    configureButtonBindings();
+  }
 
-private void configureButtonBindings() {
-  paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
-}
+  private void configureButtonBindings() {
+    paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
+  }
 
-public void setDefaultCommands() {
-  intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
-  driveBaseSub.setDefaultCommand(factory.getTankDrive(paddedXbox));
-}
+  public void setDefaultCommands() {
+    intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
+    driveBaseSub.setDefaultCommand(factory.getArcadeDrive(paddedXbox));
+  }
+
 }

@@ -13,7 +13,9 @@ public class ArcadeDrive extends CommandBase {
    * Creates a new ArcadeDrive.
    */
   public ArcadeDrive(DriveBaseSub driveBaseSub, PaddedXbox paddedXbox, double a, double b) {
-    
+    addRequirements(driveBaseSub);
+    this.driveBaseSub = driveBaseSub;
+    this.paddedXbox = paddedXbox;
   }
 
   @Override
@@ -22,10 +24,13 @@ public class ArcadeDrive extends CommandBase {
 
   @Override
   public void execute() {
+    driveBaseSub.setPower(paddedXbox.getLeftY());
+    driveBaseSub.setPower(paddedXbox.getRightX());
   }
 
   @Override
   public void end(boolean interrupted) {
+    driveBaseSub.setPower(0);
   }
 
   @Override
