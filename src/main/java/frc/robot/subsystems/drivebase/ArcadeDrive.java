@@ -2,6 +2,8 @@ package frc.robot.subsystems.drivebase;
 
 import com.team7419.PaddedXbox;
 
+import org.opencv.features2d.BOWImgDescriptorExtractor;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class ArcadeDrive extends CommandBase {
@@ -24,8 +26,10 @@ public class ArcadeDrive extends CommandBase {
 
   @Override
   public void execute() {
-    driveBaseSub.setPower(paddedXbox.getLeftY());
-    driveBaseSub.setPower(paddedXbox.getRightX());
+    double a = paddedXbox.getLeftY();
+    double b = paddedXbox.getRightX();
+    driveBaseSub.setLeftPower(a+b);
+    driveBaseSub.setRightPower(a-b);
   }
 
   @Override
