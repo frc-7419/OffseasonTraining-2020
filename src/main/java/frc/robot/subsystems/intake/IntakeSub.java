@@ -22,10 +22,11 @@ public class IntakeSub extends SubsystemBase {
   public IntakeSub(VictorSPX victor) {
     this.victor = victor;
     Initers.initVictors(victor);
+    victor.setInverted(false);
   }
 
   public boolean getInverted(){
-    return victor.getInverted(); //idk if this is right??
+    return victor.getInverted();
   }
 
   @Override
