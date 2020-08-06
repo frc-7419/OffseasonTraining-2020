@@ -33,4 +33,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
+
+  public void setDefaultCommands(){
+  }
 }
