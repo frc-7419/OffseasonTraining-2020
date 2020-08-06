@@ -30,6 +30,8 @@ public class ArcadeDrive extends CommandBase {
   public void execute() {
     driveBaseSub.setPower(paddedXbox.getLeftY());
     driveBaseSub.setPower(paddedXbox.getRightY());
+    straight = paddedXbox.getLeftY();
+    turn = paddedXbox.getRightY();
   }
 
   @Override
