@@ -10,7 +10,8 @@ public class DriveBaseSub extends SubsystemBase {
   private TalonFX talonFxRM;
   private TalonFX talonFxLF;
   private TalonFX talonFxRF;
-
+  private double straight;
+  private double turn;
 
 
   public DriveBaseSub(TalonFX talonFxLM, TalonFX talonFxRM, TalonFX talonFxLF, TalonFX talonFxRF) {
@@ -32,6 +33,12 @@ public class DriveBaseSub extends SubsystemBase {
   public TalonFX getRightFollow() {
     return this.talonFxRF;
   }
+  public double getStraight() {
+    return this.straight;
+  }
+  public double getTurn() {
+    return this.turn;
+  }
 
   public void setPower(double power){
     talonFxLM.set(ControlMode.PercentOutput, power);
@@ -40,7 +47,17 @@ public class DriveBaseSub extends SubsystemBase {
     talonFxRF.set(ControlMode.PercentOutput, power);   
   }
 
+  public void setPower(double leftPower, double rightPower) {
+    talonFxLM.set(ControlMode.PercentOutput, leftPower);
+    talonFxLF.set(ControlMode.PercentOutput, leftPower);
+
+    talonFxRM.set(ControlMode.PercentOutput, rightPower);
+    talonFxRF.set(ControlMode.PercentOutput, rightPower);   
+
+  }
+
   @Override
   public void periodic() {
   }
+
 }
