@@ -3,7 +3,6 @@ package frc.robot;
 import frc.robot.Factory;
 import com.team7419.PaddedXbox;
 
-import edu.wpi.first.wpilibj.Talon;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.intake.IntakeSub;
