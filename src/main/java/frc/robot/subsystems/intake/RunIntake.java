@@ -35,4 +35,7 @@ public class RunIntake extends CommandBase {
   public boolean isFinished() {
     return false;
   }
+public double getPower() {
+	return power;
+}
 }
