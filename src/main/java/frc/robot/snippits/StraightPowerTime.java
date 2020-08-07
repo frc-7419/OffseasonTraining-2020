@@ -36,7 +36,12 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public boolean isFinished() {
+    while(time > 0) {
+      driveBaseSub.setPower(power);
+      time -= 1;
       return false;
+    }
+    return true;
   }
 
 }

@@ -1,6 +1,8 @@
 package frc.robot;
 
 import frc.robot.Factory;
+import frc.robot.snippits.StraightPowerTime;
+
 import com.team7419.PaddedXbox;
 
 import frc.robot.subsystems.drivebase.DriveBaseSub;
@@ -14,12 +16,14 @@ public class RobotContainer {
   private PaddedXbox paddedXbox;
   private TankDrive tankDrive;
   private DriveBaseSub driveBaseSub;
+  private StraightPowerTime straightPowerTime;
 
   public RobotContainer(Factory factory) {
     this.factory = factory;
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
+    straightPowerTime = factory.getAutoStraightPower();
 
     // Configure the button bindings
     configureButtonBindings();
@@ -34,4 +38,8 @@ public class RobotContainer {
     driveBaseSub.setDefaultCommand(factory.getArcadeDrive(paddedXbox));
   }
 
+  public void getAutoCommand() {
+    straightPowerTime = this.straightPowerTime;
+    return factory.getAutoStraightPower();
+  }
 }
