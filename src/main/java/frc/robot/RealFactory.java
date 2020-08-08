@@ -5,6 +5,8 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.team7419.PaddedXbox;
 
 import frc.robot.Constants.CanIds;
+import frc.robot.snippits.StraightPowerTime;
+import frc.robot.subsystems.drivebase.ArcadeDrive;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.intake.IntakeSub;
 import frc.robot.subsystems.intake.RunIntake;
@@ -67,4 +69,14 @@ public class RealFactory implements Factory{
         return new TankDrive(this.getDriveBaseSub(), joystick);
     }
 
+    @Override 
+    public ArcadeDrive getArcadeDrive(PaddedXbox joystick){
+        return new ArcadeDrive(this.getDriveBaseSub(), joystick, PowerConstants.DriveBaseStraight.val, PowerConstants.DriveBaseTurn.val);
+    }
+
+    @Override
+    public StraightPowerTime getStraightPowerTime(double power, double time){
+        return new StraightPowerTime(this.getDriveBaseSub(), power, time);
+    }
+   
 }
