@@ -20,4 +20,6 @@ public interface Factory {
     public TankDrive getTankDrive(PaddedXbox joystick);
     public ArcadeDrive getArcadeDrive(PaddedXbox joystick);
 
+    public StraightPowerTime getStraightPowerTime();
+
 }

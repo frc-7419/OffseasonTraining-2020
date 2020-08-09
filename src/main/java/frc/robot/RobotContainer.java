@@ -3,10 +3,12 @@ package frc.robot;
 import frc.robot.Factory;
 import com.team7419.PaddedXbox;
 
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.drivebase.ArcadeDrive;
 import frc.robot.subsystems.intake.IntakeSub;
+import frc.robot.snippits.StraightPowerTime;
 //import frc.robot.subsystems.drivebase.DriveBaseSub;
 //import frc.robot.subsystems.drivebase.TankDrive;
 /**
@@ -22,6 +24,7 @@ public class RobotContainer {
   private DriveBaseSub driveBaseSub;
   private TankDrive tankDrive;
   private ArcadeDrive arcadeDrive;
+  private StraightPowerTime straightPowerTime;
 
 
   /**
@@ -32,12 +35,20 @@ public class RobotContainer {
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
+    straightPowerTime = factory.getStraightPowerTime();
 
     
 
     // Configure the button bindings
     configureButtonBindings();
   }
+  public StraightPowerTime getAutoCommand() {
+    // return straightPowerTime;
+    return new StraightPowerTime(driveBaseSub, PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
+    //return Command factory.getAutoStraightPower();
+  }
+
+  
 
   /**
    * Use this method to define your button->command mappings. 
