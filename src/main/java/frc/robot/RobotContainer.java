@@ -9,7 +9,6 @@ import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.intake.IntakeSub;
 
-
 public class RobotContainer {
   private Factory factory;
   private IntakeSub intake;
@@ -23,7 +22,6 @@ public class RobotContainer {
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
-    straightPowerTime = factory.getAutoStraightPower();
 
     // Configure the button bindings
     configureButtonBindings();
