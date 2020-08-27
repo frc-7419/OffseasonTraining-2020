@@ -1,5 +1,8 @@
 package frc.robot.subsystems.intake;
 
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -8,10 +11,20 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 public class IntakeSub extends SubsystemBase {
+  private static final String VictorSPX = null;
   /**
    * Creates a new IntakeSub.
    */
-  public IntakeSub() {
+  private VictorSPX victor;
+  
+  
+
+  public IntakeSub(VictorSPX victor) {
+    this.victor = victor;
+    victor.setInverted();
+    
+
+    
 
   }
 
@@ -19,6 +32,7 @@ public class IntakeSub extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
 }
 
 // karan's comment in IntakeSub!
