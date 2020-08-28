@@ -1,6 +1,6 @@
 package frc.robot.subsystems.intake;
 import com.team7419.Initers;
-
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.Victor;
@@ -25,12 +25,16 @@ public class IntakeSub extends SubsystemBase {
 
   public IntakeSub(VictorSPX victor) {
     this.victor = victor;
-    Initers.initVictor(victor);
-    victor.setInverted(victor);
+    Initers.initVictors(victor);
+    victor.setInverted(false);
   }
 
-  public boolean getInverted(VictorSPX victor) {
+  public boolean getInverted() {
     return victor.getInverted();
+  }
+
+  public void setPower(double power) {
+    victor.set(ControlMode.PercentOutput, power);
   }
 
   @Override
