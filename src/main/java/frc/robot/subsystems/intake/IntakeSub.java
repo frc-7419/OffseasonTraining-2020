@@ -20,8 +20,6 @@ public class IntakeSub extends SubsystemBase {
    * Creates a new IntakeSub.
    */
   private VictorSPX victor;
-  
-  
 
   public IntakeSub(VictorSPX victor) {
     this.victor = victor;
@@ -31,6 +29,10 @@ public class IntakeSub extends SubsystemBase {
 
   public boolean getInverted() {
     return victor.getInverted();
+  }
+
+  public VictorSPX getVictor() {
+    return victor;
   }
 
   public void setPower(double power) {
