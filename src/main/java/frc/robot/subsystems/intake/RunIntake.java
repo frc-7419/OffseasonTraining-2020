@@ -15,6 +15,9 @@ public class RunIntake extends CommandBase {
     this.power = power;
   }
 
+  public double getPower() {
+    return power;
+  }
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
