@@ -1,4 +1,5 @@
 package frc.robot.subsystems.intake;
+import com.team7419.Initers;
 
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
@@ -24,11 +25,12 @@ public class IntakeSub extends SubsystemBase {
 
   public IntakeSub(VictorSPX victor) {
     this.victor = victor;
-    victor.setInverted();
-    
+    Initers.initVictor(victor);
+    victor.setInverted(victor);
+  }
 
-    
-
+  public boolean getInverted(VictorSPX victor) {
+    return victor.getInverted();
   }
 
   @Override
