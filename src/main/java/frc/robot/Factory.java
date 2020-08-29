@@ -20,12 +20,6 @@ public interface Factory {
     public DriveBaseSub getDriveBaseSub();
     public TankDrive getTankDrive(PaddedXbox joystick);
     public ArcadeDrive getArcadeDrive(PaddedXbox joystick);
-<<<<<<< HEAD
-
-    public StraightPowerTime getStraightPowerTime();
-
-=======
     public StraightPowerTime getStraightPowerTime(double power, double time);
     public TurnPowerTime getTurnPowerTime(String direction, double power, double time);
->>>>>>> assignments
 }
