@@ -8,6 +8,8 @@ public class StraightPowerTime extends CommandBase {
   private DriveBaseSub driveBaseSub;
   private double power; // double because power is double
   private int time; // int because milliseconds
+  private double initialTime;
+  private double currentTime;
   
 
   /**
@@ -21,27 +23,29 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public void initialize() {
+    initialTime = System.currentTimeMillis();
   }
 
   @Override
   public void execute() {
     driveBaseSub.setPower(power);
+    currentTime = System.currentTimeMillis() - initialTime;
   }
-
 
   @Override
   public void end(boolean interrupted) {
     driveBaseSub.setPower(0);
+    driveBaseSub.brake();
   }
 
   @Override
   public boolean isFinished() {
-    while(time > 0) {
-      driveBaseSub.setPower(power);
-      time -= 1;
-      return false;
+    
+    if (currentTime < time) {
+      return true;
     }
-    return true;
+    return false;
+
   }
 
 }
