@@ -41,7 +41,7 @@ public class StraightPowerTime extends CommandBase {
     System.out.println("Command started at: " + startTime);
 
   }
-
+  //Testing to see if it works, YESSSSSSSSSSSSSSSSSSSS
   public static long endTime = System.currentTimeMillis();
 
   @Override
