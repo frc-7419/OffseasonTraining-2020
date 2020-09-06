@@ -7,8 +7,8 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class ArcadeDrive extends CommandBase {
   private DriveBaseSub drive;
   private PaddedXbox xbox;
-  private double num1;
-  private double num2;
+  private double straight;
+  private double turn;
   /**
    * Creates a new ArcadeDrive.
    */
@@ -16,8 +16,8 @@ public class ArcadeDrive extends CommandBase {
    {
      this.drive = drive;
      this.xbox = xbox;
-     this.num1 = num1;
-     this.num2 = num2;
+     this.straight = straight;
+     this.turn = turn;
      addRequirements(drive);
   }
 
@@ -27,8 +27,10 @@ public class ArcadeDrive extends CommandBase {
 
   @Override
   public void execute() {
-    drive.setPower(xbox.getLeftY());
-    drive.setPower(xbox.getRightY());
+    double direction1 = xbox.getLeftY() * straight;
+    double direction2 = xbox.getRightX() * turn;
+    drive.setLeftPower(direction1+direction2);
+    drive.setRightPower(direction1-direction2);
   }
 
   @Override

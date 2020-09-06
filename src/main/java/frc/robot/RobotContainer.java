@@ -2,6 +2,7 @@ package frc.robot;
 
 import com.team7419.PaddedXbox;
 
+import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.intake.IntakeSub;
 import frc.robot.subsystems.intake.RunIntakeWithJoystick;
 
@@ -16,6 +17,7 @@ public class RobotContainer
   private Factory factory;
   private IntakeSub intake;
   private PaddedXbox xbox;
+  private DriveBaseSub driveBaseSub;
   public RobotContainer(Factory factory) {
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -23,6 +25,7 @@ public class RobotContainer
     this.factory = factory;
     intake = factory.getIntakeSub();
     xbox = factory.getPaddedXbox();
+    driveBaseSub = factory.getDriveBaseSub();
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -36,5 +39,7 @@ public class RobotContainer
   } 
   public void setDefaultCommands(){
     intake.setDefaultCommand(factory.getRunIntakeWithJoystick(xbox));
+    driveBaseSub.setDefaultCommand(factory.getTankDrive(xbox));
+    driveBaseSub.setDefaultCommand(factory.getArcadeDrive(xbox));
   }
 }

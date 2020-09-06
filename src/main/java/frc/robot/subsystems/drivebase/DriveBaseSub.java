@@ -43,6 +43,16 @@ public class DriveBaseSub extends SubsystemBase {
     rightFollow.set(ControlMode.PercentOutput, power);
   }
 
+  public void setLeftPower(double power){
+    rightMast.set(ControlMode.PercentOutput, power);
+    rightFollow.set(ControlMode.PercentOutput, power);
+  }
+
+  public void setRightPower(double power){
+    leftMast.set(ControlMode.PercentOutput, power);
+    leftFollow.set(ControlMode.PercentOutput, power);
+  }
+
   @Override
   public void periodic() {
   }
