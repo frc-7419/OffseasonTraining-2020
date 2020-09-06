@@ -17,48 +17,55 @@ public class StraightPowerTime extends CommandBase {
   /**
    * Runs the drive base straight at a power for a time
    */
-  private DriveBaseSub driveBaseSub;
+  private DriveBaseSub DriveBaseSub;
   private double power;
   private double time;
+  private double tInitial;
+  private double tFinal;
   
   
-  public StraightPowerTime(DriveBaseSub driveBaseSub, double power, double time) {
-    this.driveBaseSub = driveBaseSub;
+  public StraightPowerTime(DriveBaseSub DriveBaseSub, double power, double time) {
+    this.DriveBaseSub = DriveBaseSub;
     this.power = power;
     this.time = time;
+
 
   }
 
   @Override
   public void initialize() {
+    tInitial = System.currentTimeMillis();
   }
 
-  public static long startTime = System.currentTimeMillis();
+  
 
   @Override
   public void execute() {
-    driveBaseSub.setPower(power);    
-    System.out.println("Command started at: " + startTime);
+    DriveBaseSub.setPower(power);
+    tFinal = System.currentTimeMillis() - tInitial;
+       
+    
 
   }
   //Testing to see if it works, YESSSSSSSSSSSSSSSSSSSS
-  public static long endTime = System.currentTimeMillis();
+  
 
   @Override
   public void end(boolean interrupted) {
-    driveBaseSub.setPower(0);
-    driveBaseSub.brake();
+    DriveBaseSub.setPower(0);
+    DriveBaseSub.brake();
     
-    System.out.println("Command ended at: " + endTime);
-    time = endTime - startTime;
-    System.out.println("The command ran for the time: " + time);
+
   }
 
   
   @Override
   
   public boolean isFinished() {
-    return true; //change to false if you have to
+    if(tFinal < time) {
+      return true;
+    }
+      return false; //change to false if you have to
   }
 
 
