@@ -3,6 +3,7 @@ package frc.robot.subsystems.drivebase;
 import com.team7419.PaddedXbox;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.PowerConstants;
 
 public class ArcadeDrive extends CommandBase {
   private DriveBaseSub drive;
@@ -12,7 +13,7 @@ public class ArcadeDrive extends CommandBase {
   /**
    * Creates a new ArcadeDrive.
    */
-  public ArcadeDrive(DriveBaseSub drive, PaddedXbox xbox, double num1, double num2)
+  public ArcadeDrive(DriveBaseSub drive, PaddedXbox xbox, double straight, double turn)
    {
      this.drive = drive;
      this.xbox = xbox;
