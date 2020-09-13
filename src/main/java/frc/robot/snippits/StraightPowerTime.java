@@ -1,14 +1,18 @@
 package frc.robot.snippits;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.drivebase.DriveBaseSub;
 
 public class StraightPowerTime extends CommandBase {
 
+private DriveBaseSub driveBaseSub;
+private double power;
+private double time;
 
   /**
    * Runs the drive base straight at a power for a time
    */
-  public StraightPowerTime() {
+  public StraightPowerTime(DriveBaseSub driveBaseSub, ) {
   }
 
   @Override

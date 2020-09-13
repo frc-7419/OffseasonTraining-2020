@@ -15,7 +15,7 @@ public class TankDrive extends CommandBase {
   public TankDrive(DriveBaseSub driveBaseSub, PaddedXbox joystick) {
     this.driveBaseSub = driveBaseSub;
     this.joystick = joystick;
-    addRequirements(driveBaseSub);
+    //addRequirements(driveBaseSub);
   }
 
   @Override

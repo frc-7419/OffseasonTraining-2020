@@ -38,7 +38,7 @@ public class RobotContainer {
     joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
   public void setDefaultCommands() {
-    driveBaseSub.setDefaultCommand(factory.getTankDrive(joystick));
+    driveBaseSub.setDefaultCommand(factory.getArcadeDrive(joystick));
   }
 
 }
