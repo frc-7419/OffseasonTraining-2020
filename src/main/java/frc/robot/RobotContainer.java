@@ -38,6 +38,6 @@ public class RobotContainer {
 
   public void getAutoCommand() {
     straightPowerTime = this.straightPowerTime;
-    return factory.getAutoStraightPower();
+    return factory.StraightPowerTime(driveBaseSub, PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
   }
 }
