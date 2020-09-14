@@ -12,7 +12,10 @@ private double time;
   /**
    * Runs the drive base straight at a power for a time
    */
-  public StraightPowerTime(DriveBaseSub driveBaseSub, ) {
+  public StraightPowerTime(DriveBaseSub driveBaseSub, double power, double time) {
+    this.driveBaseSub = driveBaseSub;
+    this.power = power;
+    this.time = time;
   }
 
   @Override
@@ -21,16 +24,31 @@ private double time;
 
   @Override
   public void execute() {
+    driveBaseSub.setPowerLeftFollow(power);
+    driveBaseSub.setPowerLeftMast(power);
+    driveBaseSub.setPowerRightFollow(power);
+    driveBaseSub.setPowerRightMast(power);
   }
 
 
   @Override
   public void end(boolean interrupted) {
+    driveBaseSub.setPowerLeftFollow(0);
+    driveBaseSub.setPowerLeftMast(0);
+    driveBaseSub.setPowerRightFollow(0);
+    driveBaseSub.setPowerRightMast(0);
+    driveBaseSub.brake();
   }
 
   @Override
   public boolean isFinished() {
+    if (System.currentTimeMillis() == time) {
+      return true;
+    }
+    else {
       return false;
+    }
+
   }
 
 }
