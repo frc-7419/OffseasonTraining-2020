@@ -1,9 +1,12 @@
 package frc.robot;
 
 import frc.robot.Factory;
+import frc.robot.snippits.StraightPowerTime;
+
 import com.team7419.PaddedXbox;
 
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.intake.IntakeSub;
@@ -46,5 +49,9 @@ public class RobotContainer {
   public void setDefaultCommands() {
     intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
     driveBaseSub.setDefaultCommand(factory.getArcadeDrive(paddedXbox));
+  }
+
+  public Command getAutoCommand() {
+    
   }
 }
