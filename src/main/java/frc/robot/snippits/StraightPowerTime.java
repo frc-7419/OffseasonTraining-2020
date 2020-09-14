@@ -42,7 +42,7 @@ public class StraightPowerTime extends CommandBase {
   public boolean isFinished() {
     
     // if currentTime < total time, then keep moving until currentTime >= total time
-    if (currentTime < time) {
+    if (currentTime >= time) {
       return true;
     }
     return false;
