@@ -34,13 +34,14 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    driveBaseSub.setPower(0);
-    driveBaseSub.brake();
+    driveBaseSub.setPower(0); // stops
+    driveBaseSub.brake(); // brake
   }
 
   @Override
   public boolean isFinished() {
     
+    // if currentTime < total time, then keep moving until currentTime >= total time
     if (currentTime < time) {
       return true;
     }
