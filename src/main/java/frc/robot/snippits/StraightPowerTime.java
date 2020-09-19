@@ -42,13 +42,7 @@ private double time;
 
   @Override
   public boolean isFinished() {
-    if (System.currentTimeMillis() == time) {
-      return true;
-    }
-    else {
-      return false;
-    }
-
+    return System.currentTimeMillis() == time;
   }
 
 }

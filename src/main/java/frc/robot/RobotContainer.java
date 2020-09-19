@@ -30,14 +30,12 @@ public class RobotContainer {
     intake = factory.getIntakeSub();
     joystick = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
-    this.power = power;
-    this.time = time;
     // Configure the button bindings
     configureButtonBindings();
   }
 
   public StraightPowerTime getAutoCommand() {
-    return factory.getStraightPowerTime(power, time);
+    return factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
   }
 
   /**
