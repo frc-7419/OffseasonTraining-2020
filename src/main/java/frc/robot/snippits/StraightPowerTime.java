@@ -7,7 +7,7 @@ public class StraightPowerTime extends CommandBase {
 
   private DriveBaseSub driveBaseSub;
   private double power; // double because power is double
-  private int time; // int because milliseconds
+  private double time; // double
   private double initialTime;
   private double currentTime;
   
