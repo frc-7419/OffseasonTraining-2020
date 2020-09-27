@@ -25,13 +25,14 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public void execute() {
-    driveBaseSub.setPower(power);;
+    driveBaseSub.setPower(power);
   }
 
 
   @Override
   public void end(boolean interrupted) {
     driveBaseSub.setPower(0);
+    driveBaseSub.brake();
   }
 
   @Override
