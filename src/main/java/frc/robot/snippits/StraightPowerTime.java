@@ -9,7 +9,7 @@ public class StraightPowerTime extends CommandBase {
   private double power; // double because power is double
   private double time; // double
   private double initialTime;
-  private double currentTime;
+  private double Time;
   
 
   /**
@@ -29,7 +29,7 @@ public class StraightPowerTime extends CommandBase {
   @Override
   public void execute() {
     driveBaseSub.setPower(power);
-    currentTime = System.currentTimeMillis() - initialTime;
+    Time = System.currentTimeMillis() - initialTime;
   }
 
   @Override
@@ -42,7 +42,7 @@ public class StraightPowerTime extends CommandBase {
   public boolean isFinished() {
     
     // if currentTime < total time, then keep moving until currentTime >= total time
-    if (currentTime >= time) {
+    if (Time >= time) {
       return true;
     }
     return false;
