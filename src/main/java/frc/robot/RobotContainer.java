@@ -34,7 +34,7 @@ public class RobotContainer {
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
-    straightPowerTime = factory.getStraightPowerTime();
+    straightPowerTime = factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
     
     // Configure the button bindings
     configureButtonBindings();
@@ -54,6 +54,6 @@ public class RobotContainer {
   }
 
   public Command getAutoCommand() {
-    return factory.getStraightPowerTime();
+    return factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
   }
 }
