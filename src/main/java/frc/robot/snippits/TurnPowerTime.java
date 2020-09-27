@@ -1,16 +1,18 @@
 package frc.robot.snippits;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.drivebase.DriveBaseSub;
 
 public class TurnPowerTime extends CommandBase {
 
   private DriveBaseSub driveBaseSub;
-  private double power; // double because power is double
-  private double time; // double
+  private double power;
+  private double time;
+  private String direction;
   private double initialTime;
-  private double currentTime;
+  private double Time;
   
-  public TurnPowerTime() {
+  public TurnPowerTime(DriveBaseSub driveBaseSub, double power, double time, String direction) {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
