@@ -61,8 +61,6 @@ public class DriveBaseSub extends SubsystemBase {
     rightFollow.setNeutralMode(NeutralMode.Coast);
   }
 
-
-
   @Override
   public void periodic() {
   }
