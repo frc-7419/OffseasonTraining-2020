@@ -15,7 +15,7 @@ public class StraightPowerTime extends CommandBase {
   /**
    * Runs the drive base straight at a power for a time
    */
-  public StraightPowerTime(DriveBaseSub driveBaseSub, double power, int time) {
+  public StraightPowerTime(DriveBaseSub driveBaseSub, double power, double time) {
     this.driveBaseSub = driveBaseSub;
     this.power = power;
     this.time = time;
