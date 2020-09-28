@@ -12,7 +12,7 @@ public class TurnPowerTime extends CommandBase {
   private double initialTime;
   private double Time;
   
-  public TurnPowerTime(DriveBaseSub driveBaseSub, double power, double time, String direction) {
+  public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double power, double time) {
     this.driveBaseSub = driveBaseSub;
     this.power = power;
     this.time = time;
@@ -23,12 +23,14 @@ public class TurnPowerTime extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    initialTime = System.currentTimeMillis();
     driveBaseSub.coast();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    Time = System.currentTimeMillis() - initialTime;
     if (direction == "RIGHT"){
       driveBaseSub.setRightPower(power);
       driveBaseSub.setLeftPower(-power);
@@ -49,6 +51,9 @@ public class TurnPowerTime extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
+    if (Time >= time) {
+      return true;
+    }
     return false;
   }
 }

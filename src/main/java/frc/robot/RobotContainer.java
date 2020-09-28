@@ -2,6 +2,7 @@ package frc.robot;
 
 import frc.robot.Factory;
 import frc.robot.snippits.StraightPowerTime;
+import frc.robot.snippits.TurnPowerTime;
 
 import com.team7419.PaddedXbox;
 
