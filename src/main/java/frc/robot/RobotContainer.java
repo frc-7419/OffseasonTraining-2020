@@ -37,7 +37,7 @@ public class RobotContainer {
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
-    //straightPowerTime = factory.getStraightPowerTime();
+    straightPowerTime = factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightPower.val);
 
     
 
