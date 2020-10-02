@@ -10,7 +10,6 @@ public class TurnPowerTime extends CommandBase {
   private double time;
   private String direction;
   private double initialTime;
-  private double Time;
   
   public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double power, double time) {
     this.driveBaseSub = driveBaseSub;
