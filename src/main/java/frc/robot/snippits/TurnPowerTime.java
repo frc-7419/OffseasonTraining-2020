@@ -29,7 +29,6 @@ public class TurnPowerTime extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Time = System.currentTimeMillis() - initialTime;
     if (direction == "RIGHT"){
       driveBaseSub.setRightPower(-power);
       driveBaseSub.setLeftPower(power);
@@ -50,7 +49,7 @@ public class TurnPowerTime extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (Time >= time) {
+    if (System.currentTimeMillis() - initialTime >= time) {
       return true;
     }
     return false;
