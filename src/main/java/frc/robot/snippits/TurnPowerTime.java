@@ -14,9 +14,9 @@ public class TurnPowerTime extends CommandBase {
   
   public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double power, double time) {
     this.driveBaseSub = driveBaseSub;
+    this.direction = direction;
     this.power = power;
     this.time = time;
-    this.direction = direction;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -32,12 +32,12 @@ public class TurnPowerTime extends CommandBase {
   public void execute() {
     Time = System.currentTimeMillis() - initialTime;
     if (direction == "RIGHT"){
-      driveBaseSub.setRightPower(power);
-      driveBaseSub.setLeftPower(-power);
-    }
-    else if (direction == "LEFT") {
       driveBaseSub.setRightPower(-power);
       driveBaseSub.setLeftPower(power);
+    }
+    else if (direction == "LEFT") {
+      driveBaseSub.setRightPower(power);
+      driveBaseSub.setLeftPower(-power);
     }
   }
 
