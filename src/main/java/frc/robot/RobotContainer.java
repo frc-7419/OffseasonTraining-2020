@@ -9,6 +9,7 @@ import frc.robot.subsystems.drivebase.TankDrive;
 import frc.robot.subsystems.drivebase.ArcadeDrive;
 import frc.robot.subsystems.intake.IntakeSub;
 import frc.robot.snippits.StraightPowerTime;
+import frc.robot.snippits.TurnPowerTime;
 //import frc.robot.subsystems.drivebase.DriveBaseSub;
 //import frc.robot.subsystems.drivebase.TankDrive;
 /**
@@ -25,6 +26,7 @@ public class RobotContainer {
   private TankDrive tankDrive;
   private ArcadeDrive arcadeDrive;
   private StraightPowerTime straightPowerTime;
+  private TurnPowerTime turnPowerTime;
   //Another test
   
 
@@ -49,6 +51,8 @@ public class RobotContainer {
     return new StraightPowerTime(driveBaseSub, PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
     //return Command factory.getAutoStraightPower();
   }
+
+
 
   
 

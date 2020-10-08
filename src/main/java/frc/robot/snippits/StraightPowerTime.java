@@ -17,15 +17,15 @@ public class StraightPowerTime extends CommandBase {
   /**
    * Runs the drive base straight at a power for a time
    */
-  private DriveBaseSub DriveBaseSub;
+  private DriveBaseSub driveBaseSub;
   private double power;
   private double time;
   private double tInitial;
   private double tFinal;
   
   
-  public StraightPowerTime(DriveBaseSub DriveBaseSub, double power, double time) {
-    this.DriveBaseSub = DriveBaseSub;
+  public StraightPowerTime(DriveBaseSub driveBaseSub, double power, double time) {
+    this.driveBaseSub = driveBaseSub;
     this.power = power;
     this.time = time;
 
@@ -41,7 +41,7 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public void execute() {
-    DriveBaseSub.setPower(power);
+    driveBaseSub.setPower(power);
     tFinal = System.currentTimeMillis() - tInitial;
        
     
@@ -52,8 +52,8 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    DriveBaseSub.setPower(0);
-    DriveBaseSub.brake();
+    driveBaseSub.setPower(0);
+    driveBaseSub.brake();
     
 
   }
