@@ -15,9 +15,9 @@ public class StraightThenTurn extends SequentialCommandGroup {
    * Creates a new StraightThenTurn.
    */
   
-  public StraightThenTurn(TalonFX leftFollow, TalonFX rightFollow, TalonFX leftMass, TalonFX rightMass, Command commands) {
+  public StraightThenTurn(StraightPowerTime straightPowerTime, TurnPowerTime turnPowerTime) {
     // Add your commands in the super() call, e.g.
     // super(new FooCommand(), new BarCommand());
-    super(commands);
+    super(straightPowerTime, turnPowerTime);
   }
 }
