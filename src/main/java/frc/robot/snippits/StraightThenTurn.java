@@ -13,6 +13,6 @@ public class StraightThenTurn extends SequentialCommandGroup {
   public StraightThenTurn(TalonFX leftFollow, TalonFX rightFollow, TalonFX leftMast, TalonFX rightMast) {
     // Add your commands in the super() call, e.g.
     // super(new FooCommand(), new BarCommand());
-    super();
+    super(command);
   }
 }
