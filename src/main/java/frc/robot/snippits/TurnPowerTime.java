@@ -1,5 +1,7 @@
 package frc.robot.snippits;
 
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 
@@ -11,11 +13,11 @@ public class TurnPowerTime extends CommandBase {
   private String direction;
   private double initialTime;
   
-  public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double power, double time) {
-    this.driveBaseSub = driveBaseSub;
-    this.direction = direction;
-    this.power = power;
-    this.time = time;
+  public TurnPowerTime(TalonFX leftMast, TalonFX rightMast, TalonFX leftFollow, TalonFX rightFollow) {
+    this.driveBaseSub = leftMast;
+    this.direction = rightMast;
+    this.power = leftFollow;
+    this.time = rightFollow;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
