@@ -14,14 +14,16 @@ public class TurnPowerTime extends CommandBase {
   private double initialTime;
   
   public TurnPowerTime(TalonFX leftMast, TalonFX rightMast, TalonFX leftFollow, TalonFX rightFollow) {
-    this.driveBaseSub = leftMast;
-    this.direction = rightMast;
-    this.power = leftFollow;
-    this.time = rightFollow;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
-  // Called when the command is initially scheduled.
+  public TurnPowerTime(DriveBaseSub driveBaseSub2, String string, double d, int i) {
+}
+
+public TurnPowerTime(DriveBaseSub driveBaseSub2, String direction2, double power2, double time2) {
+}
+
+// Called when the command is initially scheduled.
   @Override
   public void initialize() {
     initialTime = System.currentTimeMillis();
