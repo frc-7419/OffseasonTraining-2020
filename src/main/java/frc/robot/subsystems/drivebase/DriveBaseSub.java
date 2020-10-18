@@ -53,7 +53,7 @@ public class DriveBaseSub extends SubsystemBase {
     talonFxLF.set(ControlMode.PercentOutput, leftPower);
   }
 
-  public void setRight(double rightPower) {
+  public void setRightPower(double rightPower) {
     talonFxRM.set(ControlMode.PercentOutput, rightPower);
     talonFxRF.set(ControlMode.PercentOutput, rightPower);
   }

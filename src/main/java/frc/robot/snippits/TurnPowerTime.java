@@ -14,12 +14,12 @@ public class TurnPowerTime extends CommandBase {
   private String direction;
 
   
-  public TurnPowerTime(DriveBaseSub driveBaseSub, double time, double power, String direction) {
+  public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double power, double time) {
     addRequirements(driveBaseSub);
     this.driveBaseSub = driveBaseSub;
     this.time = time;
     this.power = power;
-    this. direction = direction;
+    this.direction = direction;
   }
 
   // Called when the command is initially scheduled.
@@ -31,11 +31,14 @@ public class TurnPowerTime extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (direction.equals("RIGHT")) {
-      driveBaseSub.setRight(power);
+    if (direction == "RIGHT") {
+      driveBaseSub.setRightPower(-power);
+      driveBaseSub.setLeftPower(power);
     }
-    else if (direction.equals("LEFT")) {
-      driveBaseSub.setPower(-power);
+    else if (direction == "LEFT") {
+      driveBaseSub.setRightPower(power);
+      driveBaseSub.setLeftPower(-power);
+
     }
   }
 

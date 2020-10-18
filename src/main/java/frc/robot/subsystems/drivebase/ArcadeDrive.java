@@ -32,7 +32,7 @@ public class ArcadeDrive extends CommandBase {
     double b = paddedXbox.getRightX() * turnCoefficient;
 
     driveBaseSub.setLeftPower(a+b);
-    driveBaseSub.setRight(a-b);
+    driveBaseSub.setRightPower(a-b);
   }
 
   @Override
