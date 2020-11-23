@@ -16,12 +16,12 @@ public class RobotContainer {
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   private Factory factory;
-  private IntakeSub intakesub;
+  private IntakeSub intake;
   private PaddedXbox joystick;
 
   public RobotContainer(Factory factory) {
     this.factory = factory;
-    this.intakesub = this.factory.getIntakeSub();
+    this.intake = this.factory.getIntakeSub();
     this.joystick = this.factory.getPaddedXbox();
     // Configure the button bindings
     configureButtonBindings();
@@ -33,5 +33,9 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
+  }
+
+  public void setDefaultCommands() {
+    this.intake.setDefaultCommand(factory.getRunIntakeWithJoystick(this.joystick));
   }
 }

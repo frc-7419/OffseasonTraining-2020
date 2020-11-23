@@ -39,4 +39,8 @@ public class IntakeSub extends SubsystemBase {
   public boolean getInverted() {
     return victor.getInverted();
   }
+  
+  public VictorSPX getVictor() {
+    return this.victor;
+  }
 }
