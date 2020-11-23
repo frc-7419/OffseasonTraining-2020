@@ -2,6 +2,7 @@ package frc.robot;
 
 import com.team7419.PaddedXbox;
 
+import frc.robot.snippits.StraightPowerTime;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.intake.IntakeSub;
 
@@ -28,6 +29,10 @@ public class RobotContainer {
     this.joystick = this.factory.getPaddedXbox();
     // Configure the button bindings
     configureButtonBindings();
+  }
+
+  public StraightPowerTime getAutoCommand() {
+    return factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
   }
 
   /**
