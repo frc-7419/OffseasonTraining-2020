@@ -13,6 +13,7 @@ public class StraightPowerTime extends CommandBase {
   private DriveBaseSub driveBase;
   private double power;
   private double time;
+  private long initTime;
 
   public StraightPowerTime(DriveBaseSub driveBase, double power, double time) {
     this.driveBase = driveBase;
@@ -22,14 +23,15 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public void initialize() {
+    this.initTime = System.currentTimeMillis();
   }
 
   @Override
   public void execute() {
-    this.driveBase.setPowerLeftMast(this.power);
-    this.driveBase.setPowerRightMast(this.power);
-    this.driveBase.setPowerLeftFollow(this.power);
-    this.driveBase.setPowerRightFollow(this.power);
+      this.driveBase.setPowerLeftMast(this.power);
+      this.driveBase.setPowerRightMast(this.power);
+      this.driveBase.setPowerLeftFollow(this.power);
+      this.driveBase.setPowerRightFollow(this.power);
   }
 
 
@@ -44,7 +46,7 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    return System.currentTimeMillis() == this.time;
+    return (System.currentTimeMillis() - this.initTime) >= this.time;
   }
 
 }
