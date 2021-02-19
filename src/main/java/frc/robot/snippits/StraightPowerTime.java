@@ -46,5 +46,4 @@ public class StraightPowerTime extends CommandBase {
     }
     return false;
   }
-
 }
