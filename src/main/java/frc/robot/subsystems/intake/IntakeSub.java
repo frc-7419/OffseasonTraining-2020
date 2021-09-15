@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 
- //comment 
+ //william chen week 1 comment
  
 public class IntakeSub extends SubsystemBase {
   /**
