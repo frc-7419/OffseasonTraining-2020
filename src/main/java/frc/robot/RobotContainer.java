@@ -33,4 +33,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     this.xbox.getA().whenPressed(this.factory.getRunIntakeWithPower(0.5));
   }
+
+  public void setDefaultCommands() {
+    this.intake.setDefaultCommand(factory.getRunIntakeWithJoystick(this.xbox));
+  }
 }

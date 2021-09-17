@@ -30,6 +30,9 @@ public class IntakeSub extends SubsystemBase {
   public void setPower(double power) {
     victor.set(ControlMode.PercentOutput, power);
   }
+  public VictorSPX getVictor() {
+    return this.victor;
+  }
 
   @Override
   public void periodic() {
