@@ -3,7 +3,6 @@ package frc.robot;
 import com.team7419.PaddedXbox;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.drivebase.ArcadeDrive;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.intake.IntakeSub;
 
@@ -18,7 +17,6 @@ public class RobotContainer {
   private IntakeSub intake;
   private PaddedXbox xbox;
   private DriveBaseSub driveBaseSub;
-  private ArcadeDrive arcadeDrive;
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
