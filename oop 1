@@ -1,0 +1,14 @@
+public class Store {
+  //instance fields
+  String gamenameType;
+  int inventoryCount;
+  //constructor method
+  public Store(String gamename, int inventory) {
+    gamenameType = gamename;
+    inventoryCount = inventory;
+  }
+  public static void main(String[] args) {
+    Store BoTW = new Store("The Legend of Zelda: Breath of the Wild", 1324);
+    System.out.println("The shop sells the game " + BoTW.gamenameType + "." + " " + "There are " + BoTW.inventoryCount + " copies of the game." );
+  }
+}
