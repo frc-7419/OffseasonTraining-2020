@@ -18,7 +18,7 @@ public class ArcadeDrive extends CommandBase {
     this.joystick = joystick;
     this.straightCoefficient = straightCoefficient;
     this.turnCoefficient = turnCoefficient;
-    addRequirements(driveBaseSub);
+    //addRequirements(driveBaseSub);
   }
 
   @Override

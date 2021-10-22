@@ -21,7 +21,6 @@ import frc.robot.snippits.TurnPowerTime;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 
 public class Week9TurnPowerTimeTest{
-
     // DO NOT PUT ROBOTCONTAINER UP HERE.
     SimFactory simFactory = new SimFactory();
     PaddedXbox joystick = simFactory.getPaddedXbox();

@@ -42,11 +42,12 @@ public class RobotContainer {
    * Use this method to define your button->command mappings. 
    * We're going to teach you how to use this later.
    */
+  
   private void configureButtonBindings() {
     joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
   public void setDefaultCommands() {
-    driveBaseSub.setDefaultCommand(factory.getArcadeDrive(joystick));
+    intake.setDefaultCommand(factory.getRunIntakeWithJoystick(joystick));
   }
 
 }

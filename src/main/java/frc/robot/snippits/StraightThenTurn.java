@@ -14,6 +14,7 @@ public class StraightThenTurn extends SequentialCommandGroup {
   public StraightThenTurn(TalonFX leftMast, TalonFX rightMast, TalonFX leftFollow, TalonFX rightFollow) {
     // Add your commands in the super() call, e.g.
     // super(new FooCommand(), new BarCommand());
+    
     super(new StraightPowerTime(new DriveBaseSub(leftMast, rightMast, leftFollow, rightFollow), 0.5, 1000), new TurnPowerTime(new DriveBaseSub(leftMast, rightMast, leftFollow, rightFollow), "LEFT", 0.5, 1000));
 
     
