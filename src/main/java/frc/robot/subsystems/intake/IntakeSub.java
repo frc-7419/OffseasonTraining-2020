@@ -33,6 +33,9 @@ public class IntakeSub extends SubsystemBase {
   public boolean getInverted() {
     return this.victor.getInverted();
   }
+  public VictorSPX getVictor() {
+    return this.victor;
+  }
   public void setPower(double power) {
     this.victor.set(ControlMode.PercentOutput, power);
   }
