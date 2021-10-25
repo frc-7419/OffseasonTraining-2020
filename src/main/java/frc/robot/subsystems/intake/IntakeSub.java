@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  //comment 
  
 public class IntakeSub extends SubsystemBase {
-  private static final String VictorSPX = null;
+  
   /**
    * Creates a new IntakeSub.
    */
