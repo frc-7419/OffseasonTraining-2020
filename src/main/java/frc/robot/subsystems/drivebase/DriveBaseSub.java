@@ -1,6 +1,7 @@
 package frc.robot.subsystems.drivebase;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -19,10 +20,6 @@ public class DriveBaseSub extends SubsystemBase {
     this.rightm = rm;
     this.leftf = lf;
     this.rightf = rf;
-    this.leftm.set(ControlMode.PercentOutput, 0);
-    this.rightm.set(ControlMode.PercentOutput, 0);
-    this.leftf.set(ControlMode.PercentOutput, 0);
-    this.rightf.set(ControlMode.PercentOutput, 0);
   }
 
   @Override
@@ -40,5 +37,27 @@ public class DriveBaseSub extends SubsystemBase {
   }
   public TalonFX getRightFollow() {
     return this.rightf;
+  }
+  public void brake() {
+    this.leftm.setNeutralMode(NeutralMode.Brake);
+    this.rightm.setNeutralMode(NeutralMode.Brake);
+    this.leftf.setNeutralMode(NeutralMode.Brake);
+    this.rightf.setNeutralMode(NeutralMode.Brake);
+  }
+  public void coast() {
+    this.leftm.setNeutralMode(NeutralMode.Coast);
+    this.rightm.setNeutralMode(NeutralMode.Coast);
+    this.leftf.setNeutralMode(NeutralMode.Coast);
+    this.rightf.setNeutralMode(NeutralMode.Coast);
+  }
+  /**
+   * Drives all four motors on the drivetrain with the same power.
+   * @param power The power to drive at.
+   */
+  public void drivePower(double power) {
+    this.leftm.set(ControlMode.PercentOutput, power);
+    this.rightm.set(ControlMode.PercentOutput, power);
+    this.leftf.set(ControlMode.PercentOutput, power);
+    this.rightf.set(ControlMode.PercentOutput, power);
   }
 }

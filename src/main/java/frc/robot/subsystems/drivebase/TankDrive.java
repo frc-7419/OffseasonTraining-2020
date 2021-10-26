@@ -32,10 +32,7 @@ public class TankDrive extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    this.drive.getLeftMast().set(ControlMode.PercentOutput, 0);
-    this.drive.getRightMast().set(ControlMode.PercentOutput, 0);
-    this.drive.getLeftFollow().set(ControlMode.PercentOutput, 0);
-    this.drive.getRightFollow().set(ControlMode.PercentOutput, 0);
+    this.drive.drivePower(0);
   }
 
   @Override

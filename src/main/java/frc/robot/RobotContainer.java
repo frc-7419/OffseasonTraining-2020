@@ -2,6 +2,7 @@ package frc.robot;
 
 import com.team7419.PaddedXbox;
 
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.intake.IntakeSub;
 
@@ -38,6 +39,9 @@ public class RobotContainer {
   }
   public void setDefaultCommands() {
     this.intake.setDefaultCommand(this.fact.getRunIntakeWithJoystick(this.xbox));
-    this.drive.setDefaultCommand(this.fact.getTankDrive(this.xbox));
+    this.drive.setDefaultCommand(this.fact.getArcadeDrive(xbox));
+  }
+  public Command getAutoCommand() {
+    return this.fact.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
   }
 }
