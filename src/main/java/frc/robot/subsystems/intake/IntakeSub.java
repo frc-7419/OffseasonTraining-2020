@@ -1,6 +1,5 @@
 package frc.robot.subsystems.intake;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.team7419.Initers;
 
@@ -35,12 +34,5 @@ public class IntakeSub extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-
-
-  }
-
-
-  public void setPower(double power){
-    victor.set(ControlMode.PercentOutput,power);
   }
 }
