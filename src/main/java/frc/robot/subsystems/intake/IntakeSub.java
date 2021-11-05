@@ -14,10 +14,21 @@ public class IntakeSub extends SubsystemBase {
   /**
    * Creates a new IntakeSub.
    */
-  public IntakeSub() {
 //this is a comment
 //second comment
-  }
+
+private VictorSPX victor;
+
+public IntakeSub(VictorSPX victor){
+  this.victor = victor;
+  Initers.initVictors(victor);
+  victor.setInverted(false);
+}
+
+public boolean getInverted(){
+  return false;
+}
+  
 
   @Override
   public void periodic() {
