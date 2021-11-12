@@ -27,6 +27,9 @@ public class IntakeSub extends SubsystemBase {
     victor.setInverted(false);
   }
 
+  public VictorSPX getVictor(){
+    return this.victor;
+  }
 
   public boolean getInverted(){
     return victor.getInverted();
@@ -35,6 +38,7 @@ public class IntakeSub extends SubsystemBase {
   public void setPower(double power) {
     victor.set(ControlMode.PercentOutput, power);
   }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
