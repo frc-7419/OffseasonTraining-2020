@@ -39,3 +39,7 @@ public void setDefaultCommands(){
   this.driveBaseSub.setDefaultCommand(factory.getArcadeDrive(this.xbox));
   this.driveBaseSub.setDefaultCommand(factory.getTankDrive(this.xbox));
 }
+
+public Command getAutoCommand(){
+  return factory.getStraightPowerTime(owerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
+}

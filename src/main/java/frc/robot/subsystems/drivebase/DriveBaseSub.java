@@ -48,3 +48,17 @@ public class DriveBaseSub extends SubsystemBase {
   }
 
 }
+
+public void brake(){
+  this.leftMast.setNeutralMode(NeutralMode.Brake);
+  this.rightMast.setNeutralMode(NeutralMode.Brake);
+  this.leftFollow.setNeutralMode(NeutralMode.Brake);
+  this.rightFollow.setNeutralMode(NeutralMode.Brake);
+}
+
+public void coast(){
+  this.leftMast.setNeutralMode(NeutralMode.Coast);
+  this.rightMast.setNeutralMode(NeutralMode.Coast);
+  this.leftFollow.setNeutralMode(NeutralMode.Coast);
+  this.rightFollow.setNeutralMode(NeutralMode.Coast);
+}
