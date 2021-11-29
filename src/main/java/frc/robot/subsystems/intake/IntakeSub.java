@@ -26,6 +26,11 @@ public IntakeSub(VictorSPX victor){
   victor.setInverted(false);
 }
 
+public VictorSPX getVictor(){
+  return victor;
+}
+
+
 public boolean getInverted(){
   return false;
 }
@@ -42,3 +47,4 @@ public boolean getInverted(){
 public void setPower(double power){
   victor.set(ControlMode.PercentOutput, power);
 }
+
