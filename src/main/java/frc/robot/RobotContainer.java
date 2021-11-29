@@ -11,6 +11,7 @@ public class RobotContainer {
   private IntakeSub intake;
   private PaddedXbox joystick;
   private DriveBaseSub driveBaseSub;
+  private ArcadeDrive arcadeDrive;
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -35,5 +36,6 @@ public class RobotContainer {
 
 public void setDefaultCommands(){
   this.intake.setDefaultCommand(factory.getRunIntakewithJoystick(this.xbox);
+  this.driveBaseSub.setDefaultCommand(factory.getArcadeDrive(this.xbox));
   this.driveBaseSub.setDefaultCommand(factory.getTankDrive(this.xbox));
 }
