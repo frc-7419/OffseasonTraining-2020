@@ -26,6 +26,10 @@ public class RunIntake extends CommandBase {
     intake1.setPower(power);
   }
 
+  public double getPower(){
+    return power;
+  }
+
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
