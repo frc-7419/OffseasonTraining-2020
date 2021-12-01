@@ -8,8 +8,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class RunIntakeWithJoystick extends CommandBase {
   /** Creates a new RunIntakeWithJoystick. */
-  public RunIntakeWithJoystick() {
+  private IntakeSub intake1;
+  private PaddedXbox joystick1;
+
+  public RunIntakeWithJoystick(IntakeSub intake, PaddedXBox joystick) {
     // Use addRequirements() here to declare subsystem dependencies.
+    this.intake1 = intake;
+    this.joystick1 = joystick;
+    addRequirements(intake1);
   }
 
   // Called when the command is initially scheduled.
@@ -22,7 +28,9 @@ public class RunIntakeWithJoystick extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    intake1.setPower(0);
+  }
 
   // Returns true when the command should end.
   @Override

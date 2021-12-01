@@ -1,5 +1,7 @@
 package frc.robot;
 
+import frc.robot.subsystems.intake.IntakeSub;
+
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -29,5 +31,10 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     joystick1.getA().whenPressed(factory1.getRunIntakeWithPower(0.5));
+  }
+
+  public void setDefaultCommands(){
+    intake1.setDefaultCommand(factory1.getRunIntakeWithJoystick(joystick1));
+    
   }
 }
