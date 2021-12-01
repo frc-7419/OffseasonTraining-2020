@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class IntakeSub extends SubsystemBase {
   private VictorSPX victor;
   public IntakeSub(VictorSPX victor) {
+    this.victor = victor;
     Initers.initVictors(victor);
     victor.setInverted(false);
   }
