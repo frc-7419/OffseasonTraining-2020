@@ -4,6 +4,7 @@ package frc.robot.subsystems.drivebase;
 // the WPILib BSD license file in the root directory of this project.
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -48,6 +49,21 @@ public class DriveBaseSub extends SubsystemBase{
     talon2.set(ControlMode.PercentOutput, power);
     talon4.set(ControlMode.PercentOutput, power);
   }
+
+  public void brake(){
+    this.talon1.setNeutralMode(NeutralMode.Brake);
+    this.talon2.setNeutralMode(NeutralMode.Brake);
+    this.talon3.setNeutralMode(NeutralMode.Brake);
+    this.talon4.setNeutralMode(NeutralMode.Brake);
+  }
+
+  public void coast(){
+    this.talon1.setNeutralMode(NeutralMode.Coast);
+    this.talon2.setNeutralMode(NeutralMode.Coast);
+    this.talon3.setNeutralMode(NeutralMode.Coast);
+    this.talon4.setNeutralMode(NeutralMode.Coast);
+  }
+
   public void periodic() {
     // This method will be called once per scheduler run
   }

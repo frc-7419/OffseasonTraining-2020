@@ -2,7 +2,9 @@ package frc.robot;
 
 import com.team7419.PaddedXbox;
 
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.intake.IntakeSub;
+import frc.robot.snippits.StraightPowerTime;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 
 /**
@@ -17,6 +19,7 @@ public class RobotContainer {
   private IntakeSub intake;
   private PaddedXbox xbox;
   private DriveBaseSub driveBaseSub;
+  private StraightPowerTime straightPowerTime;
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -26,6 +29,7 @@ public class RobotContainer {
     intake = factory.getIntakeSub();
     xbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub();
+    straightPowerTime = factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightPower.val);
     configureButtonBindings();
   }
 
@@ -35,6 +39,10 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     xbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
+  }
+
+  public Command getAutoCommand() {
+    return factory.getStraightPowerTime(PowerConstants.AutoStraightPower.val, PowerConstants.AutoStraightTime.val);
   }
 
   public void setDefaultCommands(){
