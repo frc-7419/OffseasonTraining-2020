@@ -27,8 +27,8 @@ public class TankDrive extends CommandBase {
 
   @Override
   public void execute() {
-    driveBaseSub.setPower(paddedXbox.getLeftY());
-    driveBaseSub.setPower(paddedXbox.getRightY());
+    driveBaseSub.setLeftPower(paddedXbox.getLeftY());
+    driveBaseSub.setRightPower(paddedXbox.getRightY());
 
   }
 
