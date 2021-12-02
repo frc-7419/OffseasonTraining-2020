@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 
- //comment 
+ //stephen was here 
  
 public class IntakeSub extends SubsystemBase {
   /**
-   * Creates a new IntakeSub.
+   * Creates a new  IntakeSub.
    */
   public IntakeSub() {
 

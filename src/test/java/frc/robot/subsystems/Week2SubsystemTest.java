@@ -23,7 +23,7 @@ public class Week2SubsystemTest {
        assertFalse(intakeMock.getInverted());
    }
 
-   @Test
+   @Test    
    public void isInitialized(){
     verify(victor).neutralOutput();
     verify(victor).setSensorPhase(false);
