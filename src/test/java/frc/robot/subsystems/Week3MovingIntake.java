@@ -22,7 +22,7 @@ public class Week3MovingIntake{
 
      RunIntake runIntake = new RunIntake(intakeMock, .5);
     
-    @Test
+    @Test  
     public void testConstructor() {
         assertFalse(intakeMock.getInverted());
     }

@@ -15,7 +15,7 @@ import frc.robot.subsystems.drivebase.ArcadeDrive;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 import frc.robot.subsystems.intake.IntakeSub;
 import frc.robot.subsystems.intake.RunIntake;
-import frc.robot.subsystems.intake.RunIntakeWithJoystick;
+//import frc.robot.subsystems.intake.RunIntakeWithJoystick;
 import frc.robot.subsystems.drivebase.TankDrive;
 
 public class SimFactory implements Factory{
@@ -56,9 +56,9 @@ public class SimFactory implements Factory{
      * Always pass SimFactory through this method. If you want it to be real, use the other method.
      */
     @Override
-    public RunIntakeWithJoystick getRunIntakeWithJoystick(PaddedXbox joystick){
-        return new RunIntakeWithJoystick(this.getIntakeSub(), joystick);
-    }
+    // public RunIntakeWithJoystick getRunIntakeWithJoystick(PaddedXbox joystick){
+    //     return new RunIntakeWithJoystick(this.getIntakeSub(), joystick);
+    // }
     
     @Override
     public DriveBaseSub getDriveBaseSub(){

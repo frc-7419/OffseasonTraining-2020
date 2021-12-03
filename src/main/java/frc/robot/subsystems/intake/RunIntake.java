@@ -32,7 +32,9 @@ public class RunIntake extends CommandBase {
   public void end(boolean interrupted) {
     intakeSub.setPower(0);
   }
-
+  public double getPower() {
+    return power;
+  }
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
