@@ -27,6 +27,9 @@ public class IntakeSub extends SubsystemBase {
   public void setPower(double power) {
     victor.set(ControlMode.PercentOutput, power);
   }
+  public VictorSPX getVictor() {
+    return victor;
+  }
   public boolean getInverted() {
     return victor.getInverted();
   }
