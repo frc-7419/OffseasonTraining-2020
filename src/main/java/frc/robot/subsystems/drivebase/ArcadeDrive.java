@@ -27,10 +27,16 @@ public class ArcadeDrive extends CommandBase {
 
   @Override
   public void execute() {
+    double a = xbox.getLeftY() * sc;
+    double b = xbox.getRightX() * tc;
+
+    dbs.setLeftPower(a+b);
+    dbs.setRightPower(a-b);
   }
 
   @Override
   public void end(boolean interrupted) {
+    dbs.setPower(0);
   }
 
   @Override

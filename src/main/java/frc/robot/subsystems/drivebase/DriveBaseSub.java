@@ -46,6 +46,16 @@ public class DriveBaseSub extends SubsystemBase {
     talonFX_RF.set(ControlMode.PercentOutput, power);
   }
 
+  public void setLeftPower(double leftPower){
+    talonFX_LF.set(ControlMode.PercentOutput, leftPower);
+    talonFX_LM.set(ControlMode.PercentOutput, leftPower);
+  }
+
+  public void setRightPower(double rightPower){
+    talonFX_RF.set(ControlMode.PercentOutput, rightPower);
+    talonFX_RM.set(ControlMode.PercentOutput, rightPower);
+  }
+
   @Override
   public void periodic() {
   }
