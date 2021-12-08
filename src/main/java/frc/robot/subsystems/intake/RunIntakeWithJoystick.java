@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems.intake;
 
+import com.team7419.PaddedXbox;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class RunIntakeWithJoystick extends CommandBase {
@@ -11,7 +12,7 @@ public class RunIntakeWithJoystick extends CommandBase {
   private IntakeSub intake1;
   private PaddedXbox joystick1;
 
-  public RunIntakeWithJoystick(IntakeSub intake, PaddedXBox joystick) {
+  public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox joystick) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.intake1 = intake;
     this.joystick1 = joystick;
