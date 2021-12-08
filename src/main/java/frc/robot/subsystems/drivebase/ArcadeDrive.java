@@ -8,16 +8,16 @@ public class ArcadeDrive extends CommandBase {
   
   private DriveBaseSub driveBaseSub;
   private PaddedXbox joystick;
-  private double power;
-  private double variable;
+  private double straight;
+  private double turn;
   /**
    * Creates a new ArcadeDrive.
    */
-  public ArcadeDrive(DriveBaseSub driveBaseSub, PaddedXbox joystick, double power, double variable) {
+  public ArcadeDrive(DriveBaseSub driveBaseSub, PaddedXbox joystick, double straight, double turn) {
     this.driveBaseSub = driveBaseSub;
     this.joystick = joystick;
-    this.power = power;
-    this.variable = variable;
+    this.straight = straight;
+    this.turn = turn;
   }
 
   @Override
