@@ -1,14 +1,23 @@
 package frc.robot.subsystems.drivebase;
 
+import com.team7419.PaddedXbox;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class ArcadeDrive extends CommandBase {
   
-  
+  private DriveBaseSub driveBaseSub;
+  private PaddedXbox joystick;
+  private double power;
+  private double variable;
   /**
    * Creates a new ArcadeDrive.
    */
-  public ArcadeDrive() {
+  public ArcadeDrive(DriveBaseSub driveBaseSub, PaddedXbox joystick, double power, double variable) {
+    this.driveBaseSub = driveBaseSub;
+    this.joystick = joystick;
+    this.power = power;
+    this.variable = variable;
   }
 
   @Override
