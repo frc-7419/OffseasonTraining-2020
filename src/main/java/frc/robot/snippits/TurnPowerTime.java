@@ -4,13 +4,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 
 private DriveBaseSub dbs;
-private Power power;
+private double power;
 private double time;
 private String direction;
 
 public class TurnPowerTime extends CommandBase {
   
-  public TurnPowerTime(DriveBaseSub dbs, Power p, double t, String d) {
+  public TurnPowerTime(DriveBaseSub dbs, double p, double t, String d) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.dbs = dbs;
     power = p;
