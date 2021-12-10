@@ -1,5 +1,7 @@
 package frc.robot.subsystems.intake;
-
+import com.team7419.initers;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -8,18 +10,30 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 
- //comment 
+ //comment I installed VSCode, ready to commit
  
 public class IntakeSub extends SubsystemBase {
-  /**
-   * Creates a new IntakeSub.
-   */
-  public IntakeSub() {
+  private VictorSPX victor;
+
+  public IntakeSub(VictorSPX Victor) {
+    this.victor = Victor;
+    Initers.initVictors(victor);
+    victor.setInverted(false);
 
   }
-
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public void periodic(){
   }
+
+  public boolean getInverted(){
+    return vicoter.getInverted();
+  }
+
+  public void setPower(double power){
+    victor.set(ControlMode.PercentOutput, power);
+    
+  }
+  
+
+
 }
