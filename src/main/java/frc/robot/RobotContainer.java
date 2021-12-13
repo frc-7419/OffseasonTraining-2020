@@ -18,9 +18,10 @@ public class RobotContainer {
 
   public RobotContainer(Factory factory) {
     this.factory = factory;
-    setIntake(factory.getIntakeSub());
+    intake= factory.getIntakeSub();
     joystick = factory.getPaddedXbox();
     configureButtonBindings();
+    
   }
 
   public IntakeSub getIntake() {
@@ -38,4 +39,11 @@ public class RobotContainer {
   private void configureButtonBindings() {
     joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
+
+  public void setDefaultCommand(){
+    intake.setDefaultCommand(factory.getArcadeDrive(joystick));
+    driveBaseSub.setDefaultCommand(factory.getArcadeDrive(joystick));
+  }
+
+
 }
