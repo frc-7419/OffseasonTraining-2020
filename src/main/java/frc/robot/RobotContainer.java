@@ -7,19 +7,26 @@ package frc.robot;
  * (including subsystems, commands, and button mappings) should be declared here. 
  */
 public class RobotContainer {
-
-  /**
-   * The container for the robot.  Contains subsystems, OI devices, and commands.
-   */
+  private Factory factory;
+  private IntakeSub intake;
+  private PaddedXbox joystick;
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
   }
+  public RobotContainer(Factory factory){
+    this.factory = factory;
+    intake = factory.getIntakeSub();
+    joystick = factory. getPaddedXbox();
+    configureButtonBindings();
+    
 
+  }
   /**
    * Use this method to define your button->command mappings. 
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
+    joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
 }
