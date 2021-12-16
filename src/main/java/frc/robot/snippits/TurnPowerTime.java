@@ -1,5 +1,7 @@
 package frc.robot.snippits;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.drivebase.DriveBaseSub;
 
@@ -8,47 +10,52 @@ public class TurnPowerTime extends CommandBase {
   private double power;
   private double time;
   private String direction;
-  public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double time, double power) {
+  private double timer;
+  public TurnPowerTime(DriveBaseSub driveBaseSub, String direction, double power, double time) {
     this.driveBaseSub = driveBaseSub;
     this.power = power;
     this.time = time;
     this.direction = direction;
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(this.driveBaseSub);
   }
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
     driveBaseSub.coast();
+    this.timer = System.currentTimeMillis();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (direction == "RIGHT") {
-      this.driveBaseSub.setLeftPower(this.power);
-      this.driveBaseSub.setRightPower(-this.power);
-    }
-    if (direction == "LEFT") {
-      this.driveBaseSub.setLeftPower(-this.power);
-      this.driveBaseSub.setRightPower(this.power);
+    if (this.direction == ("RIGHT")) {
+      this.driveBaseSub.getLeftMast().set(ControlMode.PercentOutput,power);
+      this.driveBaseSub.getRightMast().set(ControlMode.PercentOutput,-power);
+      this.driveBaseSub.getLeftFollow().set(ControlMode.PercentOutput,power);
+      this.driveBaseSub.getRightFollow().set(ControlMode.PercentOutput,-power);
+    }if (this.direction == ("LEFT")) {
+      this.driveBaseSub.getLeftMast().set(ControlMode.PercentOutput,-power);
+      this.driveBaseSub.getRightMast().set(ControlMode.PercentOutput,power);
+      this.driveBaseSub.getLeftFollow().set(ControlMode.PercentOutput,-power);
+      this.driveBaseSub.getRightFollow().set(ControlMode.PercentOutput,power);
     }
   }
 
   // Called once the command ends or is interrupted.
+
   @Override
   public void end(boolean interrupted) {
-    this.driveBaseSub.setLeftPower(0);
-    this.driveBaseSub.setRightPower(0);
+    this.driveBaseSub.setPowerLeftMast(0);
+    this.driveBaseSub.setPowerRightMast(0);
+    this.driveBaseSub.setPowerLeftFollow(0);
+    this.driveBaseSub.setPowerRightFollow(0);
     this.driveBaseSub.brake();
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (System.currentTimeMillis() <= this.time) {
-      return false;
-    }
-    return true;
-
+    return ((System.currentTimeMillis() - this.timer) >= this.time);
   }
 }

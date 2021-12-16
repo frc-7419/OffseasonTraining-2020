@@ -49,7 +49,18 @@ public class DriveBaseSub extends SubsystemBase{
     talon2.set(ControlMode.PercentOutput, power);
     talon4.set(ControlMode.PercentOutput, power);
   }
-
+  public void setPowerLeftMast(double power) {
+    talon1.set(ControlMode.PercentOutput, power);
+  }
+  public void setPowerLeftFollow(double power) {
+    talon3.set(ControlMode.PercentOutput, power);
+  }
+  public void setPowerRightMast(double power) {
+    talon2.set(ControlMode.PercentOutput, power);
+  }
+  public void setPowerRightFollow(double power) {
+    talon4.set(ControlMode.PercentOutput, power);
+  }
   public void brake(){
     this.talon1.setNeutralMode(NeutralMode.Brake);
     this.talon2.setNeutralMode(NeutralMode.Brake);
