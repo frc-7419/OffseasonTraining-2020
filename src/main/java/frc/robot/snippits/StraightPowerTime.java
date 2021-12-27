@@ -39,7 +39,7 @@ public class StraightPowerTime extends CommandBase {
 
   @Override
   public boolean isFinished() {
-      return System.currentTimeMillis() == this.time;
+    return System.currentTimeMillis() == this.time;
   }
 
 }
