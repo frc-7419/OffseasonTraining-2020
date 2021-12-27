@@ -48,6 +48,20 @@ public class DriveBaseSub extends SubsystemBase {
     talon4.set(ControlMode.PercentOutput, power);
   }
 
+  public void brake(){
+    this.talon1.setNeutralMode(NeutralMode.Brake);
+    this.talon2.setNeutralMode(NeutralMode.Brake);
+    this.talon3.setNeutralMode(NeutralMode.Brake);
+    this.talon4.setNeutralMode(NeutralMode.Brake);
+  }
+
+  public void coast(){
+    this.talon1.setNeutralMode(NeutralMode.Coast);
+    this.talon2.setNeutralMode(NeutralMode.Coast);
+    this.talon3.setNeutralMode(NeutralMode.Coast);
+    this.talon4.setNeutralMode(NeutralMode.Coast);
+  }
+
   @Override
   public void periodic() {
   }
