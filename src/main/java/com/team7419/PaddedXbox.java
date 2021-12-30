@@ -2,6 +2,7 @@ package com.team7419;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.subsystems.intake.RunIntake;
 
 public class PaddedXbox extends XboxController{
 
@@ -116,5 +117,7 @@ public class PaddedXbox extends XboxController{
 
 	public int getDpad(){
 		return getPOV();
+	}
+	public void whenPressed(RunIntake runIntakeWithPower) {
 	}
 }
