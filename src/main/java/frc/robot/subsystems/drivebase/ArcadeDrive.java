@@ -18,6 +18,7 @@ public class ArcadeDrive extends CommandBase {
     this.joystick = joystick;
     this.straight = straight;
     this.turn = turn;
+    addRequirements(driveBaseSub);
   }
 
   @Override
@@ -26,10 +27,15 @@ public class ArcadeDrive extends CommandBase {
 
   @Override
   public void execute() {
+    double first = joystick.getLeftY()*straight;
+    double second = joystick.getRightY()*turn;
+    driveBaseSub.setPowerLeft(first+second);
+    driveBaseSub.setPowerRight(first-second);
   }
 
   @Override
   public void end(boolean interrupted) {
+    driveBaseSub.setPower(0);
   }
 
   @Override
