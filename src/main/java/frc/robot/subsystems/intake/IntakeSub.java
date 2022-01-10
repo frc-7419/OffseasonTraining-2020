@@ -28,7 +28,7 @@ public IntakeSub(VictorSPX victor) {
   }
 
   public VictorSPX getVictor() {
-    return this.victor;
+    return victor;
   }
 }
 

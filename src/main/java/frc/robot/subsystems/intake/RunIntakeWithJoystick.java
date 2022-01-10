@@ -7,9 +7,13 @@ package frc.robot.subsystems.intake;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class RunIntakeWithJoystick extends Command {
-  public RunIntakeWithJoystick() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  private IntakeSub intake;
+  private PaddedXbox joystick;
+
+  public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox joystick) {
+    this.intake = intake;
+    this.joystick = joystick;
+    addRequirements(intake);
   }
 
   // Called just before this Command runs the first time

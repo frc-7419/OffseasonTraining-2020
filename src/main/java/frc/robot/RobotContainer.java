@@ -33,4 +33,8 @@ public class RobotContainer {
     joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
 
+  public void setDefaultCommands(){
+    intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
+    driveBaseSub.setDefaultCommand(factory.getArcadeDrive(paddedXbox));
+  }
 }
