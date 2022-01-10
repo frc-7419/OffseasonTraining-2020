@@ -19,7 +19,8 @@ public class RobotContainer {
     this.factory = factory;
     intake = factory.getIntakeSub();
     paddedXbox = factory.getPaddedXbox();
-    driveBaseSub = factory.getDriveBaseSub()
+    driveBaseSub = factory.getDriveBaseSub();
+    straightPowerTime = factory.getAutoStraightPower();
 
     // Configure the button bindings
     configureButtonBindings();
@@ -38,4 +39,11 @@ public class RobotContainer {
     driveBaseSub.setDefaultCommand(factory.getArcadeDrive(paddedXbox));
 
   }
+
+  public getAutoCommand(){
+    straightPowerTime = this.straightPowerTime
+    return factory.getAutoStraightPower();
+  }
+
+  
 }
