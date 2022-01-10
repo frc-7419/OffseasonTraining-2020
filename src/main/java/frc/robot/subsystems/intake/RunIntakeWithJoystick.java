@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class RunIntakeWithJoystick extends Command {
   private IntakeSub intake;
-  private PaddedXbox joystick;
+  private PaddedXbox paddedXbox;
 
-  public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox joystick) {
+  public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox paddedXbox) {
     this.intake = intake;
-    this.joystick = joystick;
+    this.paddedXbox = paddedXbox;
     addRequirements(intake);
   }
 

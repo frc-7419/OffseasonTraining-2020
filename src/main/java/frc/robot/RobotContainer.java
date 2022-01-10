@@ -11,14 +11,14 @@ import frc.robot.subsystems.drivebase.DriveBaseSub;
 public class RobotContainer {
   private Factory factory;
   private IntakeSub intake;
-  private PaddedXbox joystick;
+  private PaddedXbox paddedXbox;
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer(Factory factory) {
     this.factory = factory;
     intake = factory.getIntakeSub();
-    joystick = factory.getPaddedXbox();
+    paddedXbox = factory.getPaddedXbox();
     driveBaseSub = factory.getDriveBaseSub()
 
     // Configure the button bindings
@@ -30,11 +30,12 @@ public class RobotContainer {
    * We're going to teach you how to use this later.
    */
   private void configureButtonBindings() {
-    joystick.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
+    paddedXbox.getA().whenPressed(factory.getRunIntakeWithPower(0.5));
   }
 
   public void setDefaultCommands(){
     intake.setDefaultCommand(factory.getRunIntakeWithJoystick(paddedXbox));
     driveBaseSub.setDefaultCommand(factory.getArcadeDrive(paddedXbox));
+
   }
 }
