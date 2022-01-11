@@ -1,5 +1,10 @@
 package frc.robot.subsystems.intake;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.team7419.Initers;
+
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -8,15 +13,35 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  * to step you through 
  */
 
- //comment 
- 
+ //Glue is incredibly sticky!
+
+
 public class IntakeSub extends SubsystemBase {
   /**
    * Creates a new IntakeSub.
    */
-  public IntakeSub() {
+  private VictorSPX victor;
 
+  public IntakeSub(VictorSPX victor) {
+    this.victor = victor;
+    Initers.initVictors(victor);
+    victor.setInverted(false);
   }
+
+  
+public VictorSPX getVictor() {
+  return victor;
+}
+
+public boolean getInverted() {
+
+  return victor.getInverted();
+
+}
+
+public void setPower(double power) {
+  victor.set(ControlMode.PercentOutput, power);
+}
 
   @Override
   public void periodic() {
