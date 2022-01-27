@@ -8,3 +8,4 @@ public class TestSystem {
         Assert.assertEquals(0, 0);
     }
 }
+/** */
