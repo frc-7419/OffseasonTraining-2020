@@ -38,6 +38,5 @@ public class RobotContainer {
 
   public void setDefaultCommands() {
     intakesub.setDefaultCommand(factory.getRunIntakeWithJoystick(joystick));
-    
   }
 }
