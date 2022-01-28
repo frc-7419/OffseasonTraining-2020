@@ -82,7 +82,7 @@ public class RealFactory implements Factory{
 
     @Override
     public TurnPowerTime getTurnPowerTime(String direction, double power, double time){
-        return new TurnPowerTime(this.getDriveBaseSub(), direction, power, time);
+        return new TurnPowerTime(this.getDriveBaseSub(), time, power, direction);
     }
    
 }
