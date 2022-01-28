@@ -1,9 +1,11 @@
 package frc.robot.subsystems.intake;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.ctre.phoenix.motorocontrol.can.VictorSPX;
 import com.team7419.Initers;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 /**
  * For your first code assignment, you're going to be writing a subsystem 
  * for the intake on our 2020 robot. There's a tutorial on Notion that's going 
@@ -19,11 +21,18 @@ public class IntakeSub extends SubsystemBase {
    * Creates a new  IntakeSub.
    */
   public IntakeSub(VictorSPX victor1) {
-    victor1 = victor1;
-    Initiers.initVictors(victor1);
-    victor1.setInverted();
+    this.victor1 = victor1;
+    Initers.initVictors(victor1);
+    victor1.setInverted(false);
   }
-  public String getInverted() {
+
+  public void setPower(double power) {
+    victor1.set(ControlMode.PercentOutput, power);
+  }
+  public VictorSPX getVictor() {
+    return victor1;
+  }
+  public boolean getInverted() {
     return victor1.getInverted();
   }
 
