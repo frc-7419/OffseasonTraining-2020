@@ -1,0 +1,23 @@
+// Week 2
+// Siddharth Ramalingam
+
+package frc.robot.subsystems.intake;
+
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+ 
+public class IntakeSub extends SubsystemBase {
+
+
+
+  public IntakeSub() {
+
+  }
+
+  @Override
+
+  public void periodic() {
+    
+
+  }
+}
