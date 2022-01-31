@@ -22,12 +22,29 @@ public class ArcadeDrive extends CommandBase {
   @Override
 
   public void execute() {
+    
+    double a = xbox.getLeftY() * straight;
+    double b = xbox.getRightX() * turn;
+
+    this.driveBaseSub.setPowerLeftMast(a);
+    this.driveBaseSub.setPowerLeftFollow(a);
+
+    this.driveBaseSub.setPowerRightMast(b);
+    this.driveBaseSub.setPowerRightFollow(b);
 
   }
 
   @Override
 
   public void end(boolean interrupted) {
+
+    this.driveBaseSub.setPowerLeftMast(0);
+    this.driveBaseSub.setPowerRightMast(0);
+    this.driveBaseSub.setPowerLeftFollow(0);
+    this.driveBaseSub.setPowerRightFollow(0);
+
+
+
 
   }
 
