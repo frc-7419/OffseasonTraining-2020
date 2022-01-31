@@ -1,49 +1,52 @@
+
 package frc.robot.subsystems.intake;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.team7419.PaddedXbox;
 
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 
-import com.team7419.Initers;
+public class RunIntakeWithJoystick extends CommandBase {
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+  private IntakeSub intake1;
 
+  private PaddedXbox joystick1;
 
+  public RunIntakeWithJoystick(IntakeSub intake, PaddedXbox joystick) {
 
+    this.intake1 = intake;
 
-public class IntakeSub extends SubsystemBase {
+    this.joystick1 = joystick;
 
-   private VictorSPX victor1;
-
-  public IntakeSub(VictorSPX victor) {
-
-    this.victor1 = victor;
-
-    Initers.initVictors(victor);
-
-    victor.setInverted(false);
-  }
-
-  public VictorSPX getVictor(){
-
-    return victor1;
-  
-  }
-
-  public void setPower(double p){
-
-    victor1.set(ControlMode.PercentOutput, p);
+    addRequirements(intake1);
 
   }
 
-  public boolean getInverted(){
+ 
 
-    return victor1.getInverted();
+  @Override
+
+  public void end(boolean interrupted) {
+
+    intake1.setPower(0);
+
   }
 
   @Override
-  
-  public void periodic() {
+
+  public void execute() {}
+
+  @Override
+
+  public void initialize() {}
+
+
+
+  @Override
+
+  public boolean isFinished() {
+
+    return false;
 
   }
+
 }
